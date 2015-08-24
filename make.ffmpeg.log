@@ -1,0 +1,1976 @@
+make -f Makefile.ffmpeg
+make[1]: Entering directory `/home/peyman/Documents/omxplayer/omxplayer-sync-2-master'
+git clone git://source.ffmpeg.org/ffmpeg ffmpeg; \
+	cd ffmpeg; git checkout n2.1
+Cloning into 'ffmpeg'...
+Note: checking out 'n2.1'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b new_branch_name
+
+HEAD is now at 35a7b73... update for 2.1
+cd ffmpeg; \
+	CFLAGS="-D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS -DTARGET_POSIX -DTARGET_LINUX -fPIC -DPIC -D_REENTRANT -D_HAVE_SBRK -D_LARGEFILE64_SOURCE -DHAVE_CMAKE_CONFIG -DHAVE_VMCS_CONFIG -D_REENTRANT -DUSE_VCHIQ_ARM -DVCHI_BULK_ALIGN=1 -DVCHI_BULK_GRANULARITY=1 -DEGL_SERVER_DISPMANX -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D__VIDEOCORE4__ -DGRAPHICS_X_VG=1 -U_FORTIFY_SOURCE -Wall -DHAVE_OMXLIB -DUSE_EXTERNAL_FFMPEG  -DHAVE_LIBAVCODEC_AVCODEC_H -DHAVE_LIBAVUTIL_MEM_H -DHAVE_LIBAVUTIL_AVUTIL_H -DHAVE_LIBAVFORMAT_AVFORMAT_H -DHAVE_LIBAVFILTER_AVFILTER_H -DOMX -DOMX_SKIP64BIT -marm -isystem/mnt/CYBRAN/raspi1/usr/include -isystem/mnt/CYBRAN/raspi1/usr/include/arm-linux-gnueabihf -isystem/mnt/CYBRAN/raspi1/opt/vc/include -isystem/mnt/CYBRAN/raspi1/usr/include -isystem/mnt/CYBRAN/raspi1/opt/vc/include/interface/vcos/pthreads -isystem/mnt/CYBRAN/raspi1/usr/include/freetype2 -isystem/mnt/CYBRAN/raspi1/usr/include/libavcodec -isystem/mnt/CYBRAN/raspi1/opt/vc/include/interface/vmcs_host/linux -isystem/mnt/CYBRAN/raspi1/usr/include/dbus-1.0 -isystem/mnt/CYBRAN/raspi1/usr/lib/arm-linux-gnueabihf/dbus-1.0/include/" \
+	LDFLAGS="" \
+  ./configure \
+			--extra-cflags="-mfpu=vfp -mfloat-abi=hard -mno-apcs-stack-check -mstructure-size-boundary=32 -mno-sched-prolog" \
+			--enable-cross-compile \
+			--enable-shared \
+			--disable-static \
+			--arch=arm \
+			--cpu=arm1176jzf-s \
+			--target-os=linux \
+			--disable-hwaccels \
+			--enable-parsers \
+			--disable-muxers \
+			--disable-filters \
+			--disable-encoders \
+			--disable-devices \
+			--disable-ffprobe \
+			--disable-ffplay \
+			--disable-ffserver \
+			--disable-ffmpeg \
+			--enable-shared \
+			--disable-doc \
+			--disable-postproc \
+			--enable-gpl \
+			--enable-protocol=http \
+			--enable-pthreads \
+			--enable-pic \
+			--disable-armv5te \
+			--disable-neon \
+			--enable-armv6t2 \
+			--enable-armv6 \
+			--enable-hardcoded-tables \
+			--disable-runtime-cpudetect \
+			--disable-debug \
+			--disable-crystalhd \
+			--disable-decoder=h264_vda \
+			--disable-decoder=h264_crystalhd \
+			--disable-decoder=h264_vdpau \
+			--disable-decoder=libstagefright_h264 \
+			--disable-decoder=vc1_crystalhd \
+			--disable-decoder=wmv3_crystalhd \
+			--disable-decoder=wmv3_vdpau \
+			--disable-decoder=mpeg1_vdpau \
+			--disable-decoder=mpeg2_crystalhd \
+			--disable-decoder=mpeg4_crystalhd \
+			--disable-decoder=mpeg4_vdpau \
+			--disable-decoder=mpeg_vdpau \
+			--disable-decoder=mpeg_xvmc \
+			--disable-decoder=msmpeg4_crystalhd \
+			--disable-decoder=vc1_vdpau \
+			--enable-decoder=mpegvideo \
+			--enable-decoder=mpeg1video \
+			--enable-decoder=mpeg2video \
+			--disable-decoder=mvc1 \
+			--disable-decoder=mvc2 \
+			--disable-decoder=h261 \
+			--disable-decoder=h263 \
+			--disable-decoder=rv10 \
+			--disable-decoder=rv20 \
+			--disable-decoder=mjpeg \
+			--disable-decoder=mjpegb \
+			--disable-decoder=sp5x \
+			--disable-decoder=jpegls \
+			--enable-decoder=mpeg4 \
+			--disable-decoder=rawvideo \
+			--disable-decoder=msmpeg4v1 \
+			--disable-decoder=msmpeg4v2 \
+			--disable-decoder=msmpeg4v3 \
+			--disable-decoder=wmv1 \
+			--disable-decoder=wmv2 \
+			--disable-decoder=h263p \
+			--disable-decoder=h263i \
+			--disable-decoder=svq1 \
+			--disable-decoder=svq3 \
+			--disable-decoder=dvvideo \
+			--disable-decoder=huffyuv \
+			--disable-decoder=cyuv \
+			--enable-decoder=h264 \
+			--disable-decoder=indeo3 \
+			--disable-decoder=vp3 \
+			--enable-decoder=theora \
+			--disable-decoder=asv1 \
+			--disable-decoder=asv2 \
+			--disable-decoder=ffv1 \
+			--disable-decoder=vcr1 \
+			--disable-decoder=cljr \
+			--disable-decoder=mdec \
+			--disable-decoder=roq \
+			--disable-decoder=xan_wc3 \
+			--disable-decoder=xan_wc4 \
+			--disable-decoder=rpza \
+			--disable-decoder=cinepak \
+			--disable-decoder=msrle \
+			--disable-decoder=msvideo1 \
+			--disable-decoder=idcin \
+			--disable-decoder=smc \
+			--disable-decoder=flic \
+			--disable-decoder=truemotion1 \
+			--disable-decoder=vmdvideo \
+			--disable-decoder=mszh \
+			--disable-decoder=zlib \
+			--disable-decoder=qtrle \
+			--disable-decoder=snow \
+			--disable-decoder=tscc \
+			--disable-decoder=ulti \
+			--disable-decoder=qdraw \
+			--disable-decoder=qpeg \
+			--disable-decoder=png \
+			--disable-decoder=ppm \
+			--disable-decoder=pbm \
+			--disable-decoder=pgm \
+			--disable-decoder=pgmyuv \
+			--disable-decoder=pam \
+			--disable-decoder=ffvhuff \
+			--disable-decoder=rv30 \
+			--disable-decoder=rv40 \
+			--enable-decoder=vc1 \
+			--enable-decoder=wmv3 \
+			--disable-decoder=loco \
+			--disable-decoder=wnv1 \
+			--disable-decoder=aasc \
+			--disable-decoder=indeo2 \
+			--disable-decoder=fraps \
+			--disable-decoder=truemotion2 \
+			--disable-decoder=bmp \
+			--disable-decoder=cscd \
+			--disable-decoder=mmvideo \
+			--disable-decoder=zmbv \
+			--disable-decoder=avs \
+			--disable-decoder=nuv \
+			--disable-decoder=kmvc \
+			--disable-decoder=flashsv \
+			--disable-decoder=cavs \
+			--disable-decoder=jpeg2000 \
+			--disable-decoder=vmnc \
+			--disable-decoder=vp5 \
+			--enable-decoder=vp6 \
+			--enable-decoder=vp6f \
+			--disable-decoder=targa \
+			--disable-decoder=dsicinvideo \
+			--disable-decoder=tiertexseqvideo \
+			--disable-decoder=tiff \
+			--disable-decoder=gif \
+			--disable-decoder=dxa \
+			--disable-decoder=dnxhd \
+			--disable-decoder=thp \
+			--disable-decoder=sgi \
+			--disable-decoder=c93 \
+			--disable-decoder=bethsoftvid \
+			--disable-decoder=ptx \
+			--disable-decoder=txd \
+			--disable-decoder=vp6a \
+			--disable-decoder=amv \
+			--disable-decoder=vb \
+			--disable-decoder=pcx \
+			--disable-decoder=sunrast \
+			--disable-decoder=indeo4 \
+			--disable-decoder=indeo5 \
+			--disable-decoder=mimic \
+			--disable-decoder=rl2 \
+			--disable-decoder=escape124 \
+			--disable-decoder=dirac \
+			--disable-decoder=bfi \
+			--disable-decoder=motionpixels \
+			--disable-decoder=aura \
+			--disable-decoder=aura2 \
+			--disable-decoder=v210x \
+			--disable-decoder=tmv \
+			--disable-decoder=v210 \
+			--disable-decoder=dpx \
+			--disable-decoder=frwu \
+			--disable-decoder=flashsv2 \
+			--disable-decoder=cdgraphics \
+			--disable-decoder=r210 \
+			--disable-decoder=anm \
+			--disable-decoder=iff_ilbm \
+			--disable-decoder=iff_byterun1 \
+			--disable-decoder=kgv1 \
+			--disable-decoder=yop \
+			--enable-decoder=vp8 \
+			--disable-decoder=webp \
+			--disable-decoder=pictor \
+			--disable-decoder=ansi \
+			--disable-decoder=r10k \
+			--disable-decoder=mxpeg \
+			--disable-decoder=lagarith \
+			--disable-decoder=prores \
+			--disable-decoder=jv \
+			--disable-decoder=dfa \
+			--disable-decoder=wmv3image \
+			--disable-decoder=vc1image \
+			--disable-decoder=utvideo \
+			--disable-decoder=bmv_video \
+			--disable-decoder=vble \
+			--disable-decoder=dxtory \
+			--disable-decoder=v410 \
+			--disable-decoder=xwd \
+			--disable-decoder=cdxl \
+			--disable-decoder=xbm \
+			--disable-decoder=zerocodec \
+			--disable-decoder=mss1 \
+			--disable-decoder=msa1 \
+			--disable-decoder=tscc2 \
+			--disable-decoder=mts2 \
+			--disable-decoder=cllc \
+			--disable-decoder=mss2 \
+			--disable-decoder=y41p \
+			--disable-decoder=escape130 \
+			--disable-decoder=exr \
+			--disable-decoder=avrp \
+			--disable-decoder=avui \
+			--disable-decoder=ayuv \
+			--disable-decoder=v308 \
+			--disable-decoder=v408 \
+			--disable-decoder=yuv4 \
+			--disable-decoder=sanm \
+			--disable-decoder=paf_video \
+			--disable-decoder=avrn \
+			--disable-decoder=cpia \
+			--disable-decoder=bintext \
+			--disable-decoder=xbin \
+			--disable-decoder=idf \
+			--cross-prefix=arm-linux-gnueabihf-
+install prefix            /usr/local
+source path               .
+C compiler                arm-linux-gnueabihf-gcc
+ARCH                      arm (arm1176jzf-s)
+big-endian                no
+runtime cpu detection     no
+ARMv5TE enabled           no
+ARMv6 enabled             yes
+ARMv6T2 enabled           yes
+VFP enabled               yes
+NEON enabled              no
+THUMB enabled             no
+debug symbols             no
+strip symbols             yes
+optimize for size         no
+optimizations             yes
+static                    no
+shared                    yes
+postprocessing support    no
+new filter support        yes
+network support           yes
+threading support         pthreads
+safe bitstream reader     yes
+SDL support               no
+opencl enabled            no
+libzvbi enabled           no
+texi2html enabled         no
+perl enabled              yes
+pod2man enabled           yes
+makeinfo enabled          no
+
+External libraries:
+iconv
+
+Enabled decoders:
+aac			eightbps		pcm_s8_planar
+aac_latm		eightsvx_exp		pcm_u16be
+ac3			eightsvx_fib		pcm_u16le
+adpcm_4xm		evrc			pcm_u24be
+adpcm_adx		ffwavesynth		pcm_u24le
+adpcm_afc		flac			pcm_u32be
+adpcm_ct		fourxm			pcm_u32le
+adpcm_dtk		g723_1			pcm_u8
+adpcm_ea		g729			pcm_zork
+adpcm_ea_maxis_xa	gsm			pgssub
+adpcm_ea_r1		gsm_ms			pjs
+adpcm_ea_r2		h264			prores_lgpl
+adpcm_ea_r3		hevc			qcelp
+adpcm_ea_xas		iac			qdm2
+adpcm_g722		imc			ra_144
+adpcm_g726		interplay_dpcm		ra_288
+adpcm_g726le		interplay_video		ralf
+adpcm_ima_amv		jacosub			realtext
+adpcm_ima_apc		mace3			roq_dpcm
+adpcm_ima_dk3		mace6			s302m
+adpcm_ima_dk4		metasound		sami
+adpcm_ima_ea_eacs	microdvd		sgirle
+adpcm_ima_ea_sead	mlp			shorten
+adpcm_ima_iss		movtext			sipr
+adpcm_ima_oki		mp1			smackaud
+adpcm_ima_qt		mp1float		smacker
+adpcm_ima_rad		mp2			smvjpeg
+adpcm_ima_smjpeg	mp2float		sol_dpcm
+adpcm_ima_wav		mp3			sonic
+adpcm_ima_ws		mp3adu			srt
+adpcm_ms		mp3adufloat		ssa
+adpcm_sbpro_2		mp3float		subrip
+adpcm_sbpro_3		mp3on4			subviewer
+adpcm_sbpro_4		mp3on4float		subviewer1
+adpcm_swf		mpc7			tak
+adpcm_thp		mpc8			targa_y216
+adpcm_xa		mpeg1video		text
+adpcm_yamaha		mpeg2video		truehd
+aic			mpegvideo		truespeech
+alac			mpl2			tta
+als			nellymoser		twinvq
+amrnb			paf_audio		vima
+amrwb			pcm_alaw		vmdaudio
+ape			pcm_bluray		vorbis
+ass			pcm_dvd			vp6
+atrac1			pcm_f32be		vp6f
+atrac3			pcm_f32le		vp8
+bink			pcm_f64be		vp9
+binkaudio_dct		pcm_f64le		vplayer
+binkaudio_rdft		pcm_lxf			vqa
+bmv_audio		pcm_mulaw		wavpack
+brender_pix		pcm_s16be		webvtt
+comfortnoise		pcm_s16be_planar	wmalossless
+cook			pcm_s16le		wmapro
+dca			pcm_s16le_planar	wmav1
+dsicinaudio		pcm_s24be		wmav2
+dvbsub			pcm_s24daud		wmavoice
+dvdsub			pcm_s24le		ws_snd1
+eac3			pcm_s24le_planar	xan_dpcm
+eacmv			pcm_s32be		xface
+eamad			pcm_s32le		xl
+eatgq			pcm_s32le_planar	xsub
+eatgv			pcm_s8			zero12v
+eatqi
+
+Enabled encoders:
+
+Enabled hwaccels:
+
+Enabled parsers:
+aac			dvd_nav			mpegaudio
+aac_latm		dvdsub			mpegvideo
+ac3			flac			png
+adx			gsm			pnm
+bmp			h261			rv30
+cavsvideo		h263			rv40
+cook			h264			tak
+dca			hevc			vc1
+dirac			mjpeg			vorbis
+dnxhd			mlp			vp3
+dpx			mpeg4video		vp8
+dvbsub
+
+Enabled demuxers:
+aac			hevc			pcm_s8
+ac3			hls			pcm_u16be
+act			ico			pcm_u16le
+adf			idcin			pcm_u24be
+adp			idf			pcm_u24le
+adx			iff			pcm_u32be
+aea			ilbc			pcm_u32le
+afc			image2			pcm_u8
+aiff			image2pipe		pjs
+amr			ingenient		pmp
+anm			ipmovie			pva
+apc			ircam			pvf
+ape			iss			qcp
+aqtitle			iv8			r3d
+asf			ivf			rawvideo
+ass			jacosub			realtext
+ast			jv			redspark
+au			latm			rl2
+avi			lmlm4			rm
+avr			loas			roq
+avs			lvf			rpl
+bethsoftvid		lxf			rsd
+bfi			m4v			rso
+bink			matroska		rtp
+bintext			mgsts			rtsp
+bit			microdvd		sami
+bmv			mjpeg			sap
+boa			mlp			sbg
+brstm			mm			sdp
+c93			mmf			segafilm
+caf			mov			shorten
+cavsvideo		mp3			siff
+cdg			mpc			smacker
+cdxl			mpc8			smjpeg
+concat			mpegps			smush
+data			mpegts			sol
+daud			mpegtsraw		sox
+dfa			mpegvideo		spdif
+dirac			mpl2			srt
+dnxhd			mpsub			str
+dsicin			msnwc_tcp		subviewer
+dts			mtv			subviewer1
+dtshd			mv			swf
+dv			mvi			tak
+dxa			mxf			tedcaptions
+ea			mxg			thp
+ea_cdata		nc			tiertexseq
+eac3			nistsphere		tmv
+epaf			nsv			truehd
+ffm			nut			tta
+ffmetadata		nuv			tty
+filmstrip		ogg			txd
+flac			oma			vc1
+flic			paf			vc1t
+flv			pcm_alaw		vivo
+fourxm			pcm_f32be		vmd
+frm			pcm_f32le		vobsub
+g722			pcm_f64be		voc
+g723_1			pcm_f64le		vplayer
+g729			pcm_mulaw		vqf
+gif			pcm_s16be		w64
+gsm			pcm_s16le		wav
+gxf			pcm_s24be		wc3
+h261			pcm_s24le		webvtt
+h263			pcm_s32be		wsaud
+h264			pcm_s32le		wsvqa
+wtv			xbin			yop
+wv			xmv			yuv4mpegpipe
+xa			xwma
+
+Enabled muxers:
+
+Enabled protocols:
+cache			hls			rtmp
+concat			http			rtmpt
+crypto			httpproxy		rtp
+data			md5			srtp
+ffrtmphttp		mmsh			tcp
+file			mmst			udp
+ftp			pipe			unix
+gopher
+
+Enabled filters:
+
+Enabled bsfs:
+aac_adtstoasc		mjpeg2jpeg		mp3_header_decompress
+chomp			mjpega_dump_header	noise
+dump_extradata		mov2textsub		remove_extradata
+h264_mp4toannexb	mp3_header_compress	text2movsub
+imx_dump_header
+
+Enabled indevs:
+
+Enabled outdevs:
+
+License: GPL version 2 or later
+Creating config.mak, config.h, and doc/config.texi...
+cd ffmpeg; \
+	make -j9
+make[2]: Entering directory `/home/peyman/Documents/omxplayer/omxplayer-sync-2-master/ffmpeg'
+make[2]: Leaving directory `/home/peyman/Documents/omxplayer/omxplayer-sync-2-master/ffmpeg'
+make[2]: Entering directory `/home/peyman/Documents/omxplayer/omxplayer-sync-2-master/ffmpeg'
+CC	libavdevice/alldevices.o
+CC	libavdevice/avdevice.o
+CC	libavformat/4xm.o
+CC	libavformat/aacdec.o
+CC	libavformat/ac3dec.o
+CC	libavformat/act.o
+CC	libavformat/adp.o
+CC	libavformat/aea.o
+CC	libavformat/adxdec.o
+CC	libavformat/afc.o
+CC	libavformat/aiffdec.o
+CC	libavformat/allformats.o
+CC	libavformat/amr.o
+CC	libavformat/anm.o
+CC	libavformat/ape.o
+CC	libavformat/apc.o
+CC	libavformat/apetag.o
+CC	libavformat/aqtitledec.o
+CC	libavformat/asf.o
+CC	libavformat/asfcrypt.o
+CC	libavformat/asfdec.o
+CC	libavformat/assdec.o
+CC	libavformat/ast.o
+CC	libavformat/astdec.o
+CC	libavformat/au.o
+CC	libavformat/avidec.o
+CC	libavformat/avio.o
+CC	libavformat/aviobuf.o
+CC	libavformat/avlanguage.o
+CC	libavformat/avr.o
+CC	libavformat/avs.o
+CC	libavformat/bethsoftvid.o
+CC	libavformat/bfi.o
+CC	libavformat/bink.o
+CC	libavformat/bintext.o
+CC	libavformat/bit.o
+CC	libavformat/bmv.o
+CC	libavformat/boadec.o
+CC	libavformat/brstm.o
+CC	libavformat/c93.o
+CC	libavformat/cache.o
+CC	libavformat/caf.o
+CC	libavformat/cafdec.o
+CC	libavformat/cavsvideodec.o
+CC	libavformat/cdg.o
+CC	libavformat/cdxl.o
+CC	libavformat/concat.o
+CC	libavformat/concatdec.o
+CC	libavformat/crypto.o
+CC	libavformat/cutils.o
+CC	libavformat/data_uri.o
+CC	libavformat/daud.o
+CC	libavformat/dfa.o
+libavformat/daud.c:53:12: warning: ‘daud_write_header’ defined but not used [-Wunused-function]
+ static int daud_write_header(struct AVFormatContext *s)
+            ^
+libavformat/daud.c:61:12: warning: ‘daud_write_packet’ defined but not used [-Wunused-function]
+ static int daud_write_packet(struct AVFormatContext *s, AVPacket *pkt)
+            ^
+CC	libavformat/diracdec.o
+CC	libavformat/dnxhddec.o
+CC	libavformat/dsicin.o
+CC	libavformat/dtsdec.o
+CC	libavformat/dtshddec.o
+CC	libavformat/dv.o
+CC	libavformat/dxa.o
+CC	libavformat/eacdata.o
+CC	libavformat/electronicarts.o
+CC	libavformat/epafdec.o
+CC	libavformat/ffmdec.o
+CC	libavformat/ffmetadec.o
+CC	libavformat/file.o
+CC	libavformat/filmstripdec.o
+CC	libavformat/flac_picture.o
+CC	libavformat/flacdec.o
+CC	libavformat/flic.o
+CC	libavformat/flvdec.o
+CC	libavformat/format.o
+CC	libavformat/frmdec.o
+CC	libavformat/ftp.o
+CC	libavformat/g722.o
+libavformat/flvdec.c:693:12: warning: ‘flv_data_packet’ defined but not used [-Wunused-function]
+ static int flv_data_packet(AVFormatContext *s, AVPacket *pkt,
+            ^
+CC	libavformat/g723_1.o
+CC	libavformat/g729dec.o
+CC	libavformat/gifdec.o
+CC	libavformat/gopher.o
+CC	libavformat/gsmdec.o
+CC	libavformat/gxf.o
+CC	libavformat/h261dec.o
+CC	libavformat/h263dec.o
+CC	libavformat/h264dec.o
+CC	libavformat/hevcdec.o
+CC	libavformat/hls.o
+CC	libavformat/hlsproto.o
+CC	libavformat/http.o
+CC	libavformat/httpauth.o
+CC	libavformat/icodec.o
+CC	libavformat/id3v1.o
+CC	libavformat/id3v2.o
+CC	libavformat/idcin.o
+CC	libavformat/idroqdec.o
+CC	libavformat/iff.o
+CC	libavformat/ilbc.o
+libavformat/id3v2.c: In function ‘id3v2_parse’:
+libavformat/id3v2.c:667:23: warning: variable ‘dlen’ set but not used [-Wunused-but-set-variable]
+         unsigned long dlen;
+                       ^
+libavformat/id3v2.c:617:9: warning: unused variable ‘uncompressed_buffer_size’ [-Wunused-variable]
+     int uncompressed_buffer_size = 0;
+         ^
+CC	libavformat/img2.o
+CC	libavformat/img2dec.o
+CC	libavformat/ingenientdec.o
+CC	libavformat/ipmovie.o
+CC	libavformat/ircam.o
+CC	libavformat/ircamdec.o
+CC	libavformat/isom.o
+CC	libavformat/iss.o
+CC	libavformat/iv8.o
+CC	libavformat/ivfdec.o
+CC	libavformat/jacosubdec.o
+CC	libavformat/jvdec.o
+CC	libavformat/lmlm4.o
+CC	libavformat/loasdec.o
+CC	libavformat/log2_tab.o
+CC	libavformat/lvfdec.o
+CC	libavformat/lxfdec.o
+CC	libavformat/m4vdec.o
+CC	libavformat/matroska.o
+CC	libavformat/matroskadec.o
+CC	libavformat/md5proto.o
+CC	libavformat/metadata.o
+CC	libavformat/mgsts.o
+CC	libavformat/microdvddec.o
+CC	libavformat/mm.o
+CC	libavformat/mmf.o
+CC	libavformat/mms.o
+CC	libavformat/mmsh.o
+CC	libavformat/mmst.o
+CC	libavformat/mov.o
+CC	libavformat/mov_chan.o
+CC	libavformat/mp3dec.o
+CC	libavformat/mpc.o
+CC	libavformat/mpc8.o
+CC	libavformat/mpeg.o
+CC	libavformat/mpegts.o
+CC	libavformat/mpegvideodec.o
+CC	libavformat/mpl2dec.o
+CC	libavformat/mpsubdec.o
+CC	libavformat/msnwc_tcp.o
+CC	libavformat/mtv.o
+CC	libavformat/mux.o
+CC	libavformat/mvdec.o
+CC	libavformat/mvi.o
+CC	libavformat/mxf.o
+CC	libavformat/mxfdec.o
+CC	libavformat/mxg.o
+CC	libavformat/ncdec.o
+CC	libavformat/network.o
+CC	libavformat/nistspheredec.o
+CC	libavformat/nsvdec.o
+CC	libavformat/nut.o
+CC	libavformat/nutdec.o
+CC	libavformat/nuv.o
+CC	libavformat/oggdec.o
+CC	libavformat/oggparsecelt.o
+CC	libavformat/oggparsedirac.o
+CC	libavformat/oggparseflac.o
+CC	libavformat/oggparseogm.o
+CC	libavformat/oggparseopus.o
+CC	libavformat/oggparseskeleton.o
+CC	libavformat/oggparsespeex.o
+CC	libavformat/oggparsetheora.o
+CC	libavformat/oggparsevorbis.o
+CC	libavformat/oma.o
+CC	libavformat/omadec.o
+CC	libavformat/options.o
+CC	libavformat/os_support.o
+CC	libavformat/paf.o
+CC	libavformat/pcm.o
+CC	libavformat/pcmdec.o
+CC	libavformat/pjsdec.o
+CC	libavformat/pmpdec.o
+CC	libavformat/psxstr.o
+CC	libavformat/pva.o
+CC	libavformat/pvfdec.o
+CC	libavformat/qcp.o
+CC	libavformat/r3d.o
+CC	libavformat/rawdec.o
+CC	libavformat/rawvideodec.o
+CC	libavformat/rdt.o
+CC	libavformat/realtextdec.o
+CC	libavformat/redspark.o
+CC	libavformat/riff.o
+CC	libavformat/riffdec.o
+libavformat/rdt.c: In function ‘rdt_parse_packet’:
+libavformat/rdt.c:304:9: warning: passing argument 2 of ‘ffio_init_context’ discards ‘const’ qualifier from pointer target type [enabled by default]
+         ffio_init_context(&pb, buf, len, 0, NULL, NULL, NULL, NULL);
+         ^
+In file included from libavformat/rdt.c:36:0:
+libavformat/avio_internal.h:30:5: note: expected ‘unsigned char *’ but argument is of type ‘const uint8_t *’
+ int ffio_init_context(AVIOContext *s,
+     ^
+CC	libavformat/rl2.o
+CC	libavformat/rm.o
+CC	libavformat/rmdec.o
+CC	libavformat/rmsipr.o
+CC	libavformat/rpl.o
+CC	libavformat/rsd.o
+CC	libavformat/rso.o
+CC	libavformat/rsodec.o
+CC	libavformat/rtmphttp.o
+CC	libavformat/rtmppkt.o
+CC	libavformat/rtmpproto.o
+CC	libavformat/rtp.o
+CC	libavformat/rtpdec.o
+CC	libavformat/rtpdec_amr.o
+CC	libavformat/rtpdec_asf.o
+CC	libavformat/rtpdec_g726.o
+CC	libavformat/rtpdec_h263.o
+libavformat/rtpdec_asf.c: In function ‘asfrtp_parse_packet’:
+libavformat/rtpdec_asf.c:189:9: warning: passing argument 2 of ‘ffio_init_context’ discards ‘const’ qualifier from pointer target type [enabled by default]
+         ffio_init_context(pb, buf, len, 0, NULL, NULL, NULL, NULL);
+         ^
+In file included from libavformat/rtpdec_asf.c:35:0:
+libavformat/avio_internal.h:30:5: note: expected ‘unsigned char *’ but argument is of type ‘const uint8_t *’
+ int ffio_init_context(AVIOContext *s,
+     ^
+CC	libavformat/rtpdec_h263_rfc2190.o
+CC	libavformat/rtpdec_h264.o
+CC	libavformat/rtpdec_ilbc.o
+CC	libavformat/rtpdec_jpeg.o
+CC	libavformat/rtpdec_latm.o
+CC	libavformat/rtpdec_mpeg12.o
+CC	libavformat/rtpdec_mpeg4.o
+CC	libavformat/rtpdec_mpegts.o
+CC	libavformat/rtpdec_qcelp.o
+CC	libavformat/rtpdec_qdm2.o
+CC	libavformat/rtpdec_qt.o
+CC	libavformat/rtpdec_svq3.o
+CC	libavformat/rtpdec_vp8.o
+libavformat/rtpdec_qt.c: In function ‘qt_rtp_parse_packet’:
+libavformat/rtpdec_qt.c:74:5: warning: passing argument 2 of ‘ffio_init_context’ discards ‘const’ qualifier from pointer target type [enabled by default]
+     ffio_init_context(&pb, buf, len, 0, NULL, NULL, NULL, NULL);
+     ^
+In file included from libavformat/rtpdec_qt.c:30:0:
+libavformat/avio_internal.h:30:5: note: expected ‘unsigned char *’ but argument is of type ‘const uint8_t *’
+ int ffio_init_context(AVIOContext *s,
+     ^
+CC	libavformat/rtpdec_xiph.o
+CC	libavformat/rtpproto.o
+CC	libavformat/rtsp.o
+CC	libavformat/rtspdec.o
+CC	libavformat/samidec.o
+CC	libavformat/sapdec.o
+CC	libavformat/sauce.o
+CC	libavformat/sdp.o
+CC	libavformat/sbgdec.o
+CC	libavformat/seek.o
+CC	libavformat/segafilm.o
+CC	libavformat/sierravmd.o
+CC	libavformat/siff.o
+CC	libavformat/smacker.o
+libavformat/sbgdec.c: In function ‘parse_time_sequence’:
+libavformat/sbgdec.c:538:33: warning: ‘rel_ts’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+     ts.t    = p->current_time.t + rel_ts;
+                                 ^
+CC	libavformat/smjpeg.o
+CC	libavformat/smjpegdec.o
+CC	libavformat/smush.o
+CC	libavformat/sol.o
+CC	libavformat/soxdec.o
+CC	libavformat/spdif.o
+CC	libavformat/spdifdec.o
+CC	libavformat/srtdec.o
+CC	libavformat/srtp.o
+CC	libavformat/srtpproto.o
+CC	libavformat/subtitles.o
+CC	libavformat/subviewer1dec.o
+CC	libavformat/subviewerdec.o
+CC	libavformat/swf.o
+CC	libavformat/swfdec.o
+CC	libavformat/takdec.o
+CC	libavformat/tcp.o
+CC	libavformat/tedcaptionsdec.o
+CC	libavformat/thp.o
+CC	libavformat/tiertexseq.o
+CC	libavformat/tmv.o
+CC	libavformat/tta.o
+CC	libavformat/tty.o
+CC	libavformat/txd.o
+CC	libavformat/udp.o
+CC	libavformat/unix.o
+CC	libavformat/url.o
+CC	libavformat/urldecode.o
+CC	libavformat/utils.o
+CC	libavformat/vc1test.o
+CC	libavformat/vivo.o
+CC	libavformat/voc.o
+libavformat/utils.c: In function ‘find_decoder’:
+libavformat/utils.c:108:9: warning: return discards ‘const’ qualifier from pointer target type [enabled by default]
+         return st->codec->codec;
+         ^
+libavformat/utils.c: In function ‘av_probe_input_format3’:
+libavformat/utils.c:232:17: warning: assignment discards ‘const’ qualifier from pointer target type [enabled by default]
+         lpd.buf = zerobuffer;
+                 ^
+CC	libavformat/vocdec.o
+CC	libavformat/vorbiscomment.o
+CC	libavformat/vplayerdec.o
+CC	libavformat/vqf.o
+CC	libavformat/w64.o
+CC	libavformat/wavdec.o
+CC	libavformat/wc3movie.o
+CC	libavformat/webvttdec.o
+CC	libavformat/westwood_aud.o
+CC	libavformat/westwood_vqa.o
+CC	libavformat/wtv_common.o
+CC	libavformat/wtvdec.o
+CC	libavformat/wv.o
+CC	libavformat/wvdec.o
+CC	libavformat/xa.o
+CC	libavformat/xmv.o
+CC	libavformat/yop.o
+CC	libavformat/xwma.o
+CC	libavformat/yuv4mpeg.o
+CC	libavcodec/012v.o
+CC	libavcodec/4xm.o
+CC	libavcodec/8bps.o
+CC	libavcodec/8svx.o
+CC	libavcodec/aac_ac3_parser.o
+CC	libavcodec/aac_adtstoasc_bsf.o
+libavcodec/aac_ac3_parser.c: In function ‘ff_aac_ac3_parse’:
+libavcodec/aac_ac3_parser.c:86:9: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
+         if(avctx->request_channels > 0 &&
+         ^
+libavcodec/aac_ac3_parser.c:87:17: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
+                 avctx->request_channels < s->channels &&
+                 ^
+libavcodec/aac_ac3_parser.c:88:17: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
+                 (avctx->request_channels <= 2 ||
+                 ^
+libavcodec/aac_ac3_parser.c:89:17: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
+                 (avctx->request_channels == 1 &&
+                 ^
+libavcodec/aac_ac3_parser.c:92:13: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
+             avctx->channels = avctx->request_channels;
+             ^
+CC	libavcodec/aacadtsdec.o
+CC	libavcodec/aac_parser.o
+HOSTCC	libavcodec/cbrt_tablegen.o
+HOSTCC	libavcodec/aacps_tablegen.o
+CC	libavcodec/aacpsdsp.o
+CC	libavcodec/aacsbr.o
+HOSTCC	libavcodec/aac_tablegen.o
+CC	libavcodec/aandcttab.o
+In file included from ./libavutil/libm.h:28:0,
+                 from libavcodec/aacps_tablegen.h:34,
+                 from libavcodec/aacps_tablegen.c:25:
+./config.h:396:0: warning: "CONFIG_HARDCODED_TABLES" redefined [enabled by default]
+ #define CONFIG_HARDCODED_TABLES 1
+ ^
+libavcodec/aacps_tablegen.c:24:0: note: this is the location of the previous definition
+ #define CONFIG_HARDCODED_TABLES 0
+ ^
+CC	libavcodec/ac3.o
+CC	libavcodec/ac3_parser.o
+libavcodec/aacsbr.c: In function ‘ff_sbr_apply’:
+libavcodec/aacsbr.c:1704:9: warning: passing argument 4 of ‘sbr->c.sbr_lf_gen’ from incompatible pointer type [enabled by default]
+         sbr->c.sbr_lf_gen(ac, sbr, sbr->X_low, sbr->data[ch].W, sbr->data[ch].Ypos);
+         ^
+libavcodec/aacsbr.c:1704:9: note: expected ‘const float (*)[32][32][2]’ but argument is of type ‘float (*)[32][32][2]’
+libavcodec/aacsbr.c:1707:13: warning: passing argument 4 of ‘sbr->c.sbr_hf_inverse_filter’ from incompatible pointer type [enabled by default]
+             sbr->c.sbr_hf_inverse_filter(&sbr->dsp, sbr->alpha0, sbr->alpha1, sbr->X_low, sbr->k[0]);
+             ^
+libavcodec/aacsbr.c:1707:13: note: expected ‘const float (*)[40][2]’ but argument is of type ‘float (*)[40][2]’
+libavcodec/aacsbr.c:1711:24: warning: passing argument 4 of ‘sbr_hf_gen’ from incompatible pointer type [enabled by default]
+                        sbr->data[ch].bs_num_env);
+                        ^
+libavcodec/aacsbr.c:1362:12: note: expected ‘const float (*)[40][2]’ but argument is of type ‘float (*)[40][2]’
+ static int sbr_hf_gen(AACContext *ac, SpectralBandReplication *sbr,
+            ^
+libavcodec/aacsbr.c:1711:24: warning: passing argument 5 of ‘sbr_hf_gen’ from incompatible pointer type [enabled by default]
+                        sbr->data[ch].bs_num_env);
+                        ^
+libavcodec/aacsbr.c:1362:12: note: expected ‘const float (*)[2]’ but argument is of type ‘float (*)[2]’
+ static int sbr_hf_gen(AACContext *ac, SpectralBandReplication *sbr,
+            ^
+libavcodec/aacsbr.c:1711:24: warning: passing argument 6 of ‘sbr_hf_gen’ from incompatible pointer type [enabled by default]
+                        sbr->data[ch].bs_num_env);
+                        ^
+libavcodec/aacsbr.c:1362:12: note: expected ‘const float (*)[2]’ but argument is of type ‘float (*)[2]’
+ static int sbr_hf_gen(AACContext *ac, SpectralBandReplication *sbr,
+            ^
+libavcodec/aacsbr.c:1720:33: warning: passing argument 2 of ‘sbr->c.sbr_hf_assemble’ from incompatible pointer type [enabled by default]
+                                 sbr->data[ch].e_a);
+                                 ^
+libavcodec/aacsbr.c:1720:33: note: expected ‘const float (*)[40][2]’ but argument is of type ‘float (*)[40][2]’
+libavcodec/aacsbr.c:1728:19: warning: passing argument 3 of ‘sbr->c.sbr_x_gen’ from incompatible pointer type [enabled by default]
+                   sbr->X_low, ch);
+                   ^
+libavcodec/aacsbr.c:1728:19: note: expected ‘const float (*)[64][2]’ but argument is of type ‘float (*)[64][2]’
+libavcodec/aacsbr.c:1728:19: warning: passing argument 4 of ‘sbr->c.sbr_x_gen’ from incompatible pointer type [enabled by default]
+libavcodec/aacsbr.c:1728:19: note: expected ‘const float (*)[64][2]’ but argument is of type ‘float (*)[64][2]’
+libavcodec/aacsbr.c:1728:19: warning: passing argument 5 of ‘sbr->c.sbr_x_gen’ from incompatible pointer type [enabled by default]
+libavcodec/aacsbr.c:1728:19: note: expected ‘const float (*)[40][2]’ but argument is of type ‘float (*)[40][2]’
+CC	libavcodec/ac3dec.o
+CC	libavcodec/ac3dec_data.o
+libavcodec/ac3dec.c: In function ‘ac3_decode_init’:
+libavcodec/ac3dec.c:181:5: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
+     if (avctx->channels > 0 && avctx->request_channels > 0 &&
+     ^
+libavcodec/ac3dec.c:182:13: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
+             avctx->request_channels < avctx->channels &&
+             ^
+libavcodec/ac3dec.c:183:13: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
+             avctx->request_channels <= 2) {
+             ^
+libavcodec/ac3dec.c:184:9: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
+         avctx->channels = avctx->request_channels;
+         ^
+CC	libavcodec/ac3dsp.o
+libavcodec/ac3dec.c: In function ‘ac3_decode_frame’:
+libavcodec/ac3dec.c:1350:9: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
+         if (avctx->request_channels > 0 && avctx->request_channels <= 2 &&
+         ^
+libavcodec/ac3dec.c:1350:9: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
+libavcodec/ac3dec.c:1351:17: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
+                 avctx->request_channels < s->channels) {
+                 ^
+libavcodec/ac3dec.c:1352:13: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
+             s->out_channels = avctx->request_channels;
+             ^
+libavcodec/ac3dec.c:1353:13: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
+             s->output_mode  = avctx->request_channels == 1 ? AC3_CHMODE_MONO : AC3_CHMODE_STEREO;
+             ^
+CC	libavcodec/ac3tab.o
+CC	libavcodec/acelp_filters.o
+CC	libavcodec/acelp_pitch_delay.o
+CC	libavcodec/acelp_vectors.o
+CC	libavcodec/adpcm.o
+CC	libavcodec/adpcm_data.o
+CC	libavcodec/adx.o
+CC	libavcodec/adx_parser.o
+CC	libavcodec/adxdec.o
+CC	libavcodec/aic.o
+CC	libavcodec/alac.o
+CC	libavcodec/alac_data.o
+CC	libavcodec/allcodecs.o
+CC	libavcodec/alsdec.o
+CC	libavcodec/amrnbdec.o
+CC	libavcodec/amrwbdec.o
+CC	libavcodec/apedec.o
+In file included from libavcodec/get_bits.h:35:0,
+                 from libavcodec/adpcm.c:33:
+libavcodec/adpcm.c: In function ‘adpcm_decode_frame’:
+libavcodec/mathops.h:126:40: warning: ‘byte[1]’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+     union { unsigned u; int s; } v = { (unsigned) val << shift };
+                                        ^
+libavcodec/adpcm.c:1118:17: note: ‘byte[1]’ was declared here
+             int byte[2];
+                 ^
+libavcodec/adpcm.c:984:89: warning: ‘byte[1]’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+                 *samples++ = adpcm_ima_expand_nibble(&c->status[channel], byte[channel] >> 4  , 3);
+                                                                                         ^
+CC	libavcodec/arm/aacpsdsp_init_arm.o
+AS	libavcodec/arm/ac3dsp_arm.o
+AS	libavcodec/arm/ac3dsp_armv6.o
+CC	libavcodec/arm/ac3dsp_init_arm.o
+CC	libavcodec/arm/dcadsp_init_arm.o
+AS	libavcodec/arm/dcadsp_vfp.o
+AS	libavcodec/arm/dsputil_arm.o
+AS	libavcodec/arm/dsputil_armv6.o
+CC	libavcodec/arm/dsputil_init_arm.o
+CC	libavcodec/arm/dsputil_init_armv6.o
+CC	libavcodec/arm/fft_fixed_init_arm.o
+CC	libavcodec/arm/fft_init_arm.o
+AS	libavcodec/arm/fft_vfp.o
+AS	libavcodec/arm/flacdsp_arm.o
+CC	libavcodec/arm/flacdsp_init_arm.o
+CC	libavcodec/arm/fmtconvert_init_arm.o
+AS	libavcodec/arm/fmtconvert_vfp.o
+AS	libavcodec/arm/fmtconvert_vfp_armv6.o
+CC	libavcodec/arm/h264chroma_init_arm.o
+AS	libavcodec/arm/h264dsp_armv6.o
+CC	libavcodec/arm/h264dsp_init_arm.o
+CC	libavcodec/arm/h264pred_init_arm.o
+CC	libavcodec/arm/h264qpel_init_arm.o
+AS	libavcodec/arm/hpeldsp_arm.o
+AS	libavcodec/arm/hpeldsp_armv6.o
+CC	libavcodec/arm/hpeldsp_init_arm.o
+CC	libavcodec/arm/hpeldsp_init_armv6.o
+AS	libavcodec/arm/jrevdct_arm.o
+AS	libavcodec/arm/mdct_vfp.o
+AS	libavcodec/arm/mpegaudiodsp_fixed_armv6.o
+CC	libavcodec/arm/mpegaudiodsp_init_arm.o
+CC	libavcodec/arm/sbrdsp_init_arm.o
+CC	libavcodec/arm/mpegvideo_arm.o
+AS	libavcodec/arm/simple_idct_arm.o
+AS	libavcodec/arm/simple_idct_armv6.o
+AS	libavcodec/arm/synth_filter_vfp.o
+CC	libavcodec/arm/videodsp_init_arm.o
+CC	libavcodec/arm/vorbisdsp_init_arm.o
+CC	libavcodec/arm/vp3dsp_init_arm.o
+CC	libavcodec/arm/vp6dsp_init_arm.o
+AS	libavcodec/arm/vp8_armv6.o
+AS	libavcodec/arm/vp8dsp_armv6.o
+CC	libavcodec/arm/vp8dsp_init_arm.o
+CC	libavcodec/arm/vp8dsp_init_armv6.o
+CC	libavcodec/ass.o
+CC	libavcodec/ass_split.o
+CC	libavcodec/assdec.o
+libavcodec/arm/vp3dsp_init_arm.c: In function ‘ff_vp3dsp_init_arm’:
+libavcodec/arm/vp3dsp_init_arm.c:41:26: warning: assignment from incompatible pointer type [enabled by default]
+         c->idct_dc_add   = ff_vp3_idct_dc_add_neon;
+                          ^
+CC	libavcodec/atrac.o
+CC	libavcodec/atrac1.o
+CC	libavcodec/atrac3.o
+CC	libavcodec/audioconvert.o
+CC	libavcodec/avfft.o
+CC	libavcodec/avpacket.o
+CC	libavcodec/avpicture.o
+CC	libavcodec/bgmc.o
+CC	libavcodec/bink.o
+CC	libavcodec/binkaudio.o
+CC	libavcodec/binkdsp.o
+CC	libavcodec/bitstream.o
+CC	libavcodec/bitstream_filter.o
+CC	libavcodec/bmp_parser.o
+CC	libavcodec/bmv.o
+CC	libavcodec/brender_pix.o
+CC	libavcodec/cabac.o
+CC	libavcodec/cavs_parser.o
+CC	libavcodec/celp_filters.o
+CC	libavcodec/celp_math.o
+CC	libavcodec/chomp_bsf.o
+CC	libavcodec/cngdec.o
+CC	libavcodec/codec_desc.o
+CC	libavcodec/cook.o
+CC	libavcodec/dca.o
+CC	libavcodec/dca_parser.o
+HOSTCC	libavcodec/cos_tablegen.o
+CC	libavcodec/cook_parser.o
+CC	libavcodec/dcadec.o
+CC	libavcodec/dcadsp.o
+CC	libavcodec/dct.o
+CC	libavcodec/dct32_fixed.o
+CC	libavcodec/dct32_float.o
+CC	libavcodec/dirac.o
+CC	libavcodec/dirac_parser.o
+CC	libavcodec/dnxhd_parser.o
+libavcodec/dcadec.c: In function ‘dca_filter_channels’:
+libavcodec/dcadec.c:1452:5: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
+     if (s->avctx->request_channels == 2 && s->prim_channels > 2) {
+     ^
+libavcodec/dcadec.c: In function ‘dca_decode_frame’:
+libavcodec/dcadec.c:2230:9: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
+         || (s->core_ext_mask & DCA_EXT_XXCH && avctx->request_channels > 0
+         ^
+libavcodec/dcadec.c:2231:13: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
+             && avctx->request_channels
+             ^
+libavcodec/dcadec.c:2237:13: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
+             if (s->xch_present && (!avctx->request_channels ||
+             ^
+libavcodec/dcadec.c:2238:36: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
+                                    avctx->request_channels
+                                    ^
+libavcodec/dcadec.c:2268:13: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
+             if (avctx->request_channels == 2 && s->prim_channels > 2) {
+             ^
+libavcodec/dcadec.c:2289:9: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
+         if (avctx->request_channels > 0
+         ^
+libavcodec/dcadec.c:2290:13: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
+             && avctx->request_channels < s->prim_channels) {
+             ^
+libavcodec/dcadec.c:2293:47: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
+                                               <= avctx->request_channels; i++) {
+                                               ^
+libavcodec/dcadec.c: In function ‘dca_decode_init’:
+libavcodec/dcadec.c:2483:5: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
+     if (avctx->channels > 0 && avctx->request_channels < avctx->channels &&
+     ^
+libavcodec/dcadec.c:2484:9: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
+         avctx->request_channels == 2) {
+         ^
+libavcodec/dcadec.c:2485:9: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
+         avctx->channels = avctx->request_channels;
+         ^
+CC	libavcodec/dpcm.o
+CC	libavcodec/dpx_parser.o
+CC	libavcodec/dsicinav.o
+CC	libavcodec/dsputil.o
+CC	libavcodec/dump_extradata_bsf.o
+CC	libavcodec/dv_profile.o
+CC	libavcodec/dvbsub_parser.o
+In file included from libavcodec/dsputil.h:35:0,
+                 from libavcodec/dsputil.c:36:
+libavcodec/dsputil_template.c:253:8: warning: ‘avg_pixels16_xy2_8_c’ defined but not used [-Wunused-function]
+ PIXOP2(avg, op_avg)
+        ^
+libavcodec/rnd_avg.h:29:13: note: in definition of macro ‘CALL_2X_PIXELS’
+ static void a(uint8_t *block, const uint8_t *pixels, ptrdiff_t line_size, int h){\
+             ^
+libavcodec/bit_depth_template.c:90:25: note: in expansion of macro ‘FUNC3’
+ #define FUNC2(a, b, c)  FUNC3(a, b, c)
+                         ^
+libavcodec/bit_depth_template.c:92:18: note: in expansion of macro ‘FUNC2’
+ #define FUNCC(a) FUNC2(a, BIT_DEPTH, _c)
+                  ^
+libavcodec/dsputil_template.c:247:16: note: in expansion of macro ‘FUNCC’
+ CALL_2X_PIXELS(FUNCC(OPNAME ## _pixels16_xy2), FUNCC(OPNAME ## _pixels8_xy2), 8*sizeof(pixel))\
+                ^
+libavcodec/dsputil_template.c:253:1: note: in expansion of macro ‘PIXOP2’
+ PIXOP2(avg, op_avg)
+ ^
+libavcodec/dsputil_template.c:254:8: warning: ‘put_pixels16_xy2_8_c’ defined but not used [-Wunused-function]
+ PIXOP2(put, op_put)
+        ^
+libavcodec/rnd_avg.h:29:13: note: in definition of macro ‘CALL_2X_PIXELS’
+ static void a(uint8_t *block, const uint8_t *pixels, ptrdiff_t line_size, int h){\
+             ^
+libavcodec/bit_depth_template.c:90:25: note: in expansion of macro ‘FUNC3’
+ #define FUNC2(a, b, c)  FUNC3(a, b, c)
+                         ^
+libavcodec/bit_depth_template.c:92:18: note: in expansion of macro ‘FUNC2’
+ #define FUNCC(a) FUNC2(a, BIT_DEPTH, _c)
+                  ^
+libavcodec/dsputil_template.c:247:16: note: in expansion of macro ‘FUNCC’
+ CALL_2X_PIXELS(FUNCC(OPNAME ## _pixels16_xy2), FUNCC(OPNAME ## _pixels8_xy2), 8*sizeof(pixel))\
+                ^
+libavcodec/dsputil_template.c:254:1: note: in expansion of macro ‘PIXOP2’
+ PIXOP2(put, op_put)
+ ^
+CC	libavcodec/dvbsubdec.o
+CC	libavcodec/dvd_nav_parser.o
+CC	libavcodec/dvdsub_parser.o
+CC	libavcodec/dvdsubdec.o
+CC	libavcodec/eac3_data.o
+CC	libavcodec/eac3dec.o
+CC	libavcodec/eacmv.o
+CC	libavcodec/eaidct.o
+CC	libavcodec/eamad.o
+CC	libavcodec/eatgq.o
+libavcodec/eamad.c: In function ‘decode_frame’:
+libavcodec/eamad.c:94:44: warning: ‘mv_y’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+         unsigned offset = (mb_y * 8 + (mv_y/2))*t->last_frame.linesize[index] + mb_x * 8 + (mv_x/2);
+                                            ^
+libavcodec/eamad.c:193:15: note: ‘mv_y’ was declared here
+     int mv_x, mv_y;
+               ^
+libavcodec/eamad.c:94:97: warning: ‘mv_x’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+         unsigned offset = (mb_y * 8 + (mv_y/2))*t->last_frame.linesize[index] + mb_x * 8 + (mv_x/2);
+                                                                                                 ^
+libavcodec/eamad.c:193:9: note: ‘mv_x’ was declared here
+     int mv_x, mv_y;
+         ^
+CC	libavcodec/eatgv.o
+CC	libavcodec/eatqi.o
+CC	libavcodec/error_resilience.o
+CC	libavcodec/evrcdec.o
+CC	libavcodec/faanidct.o
+CC	libavcodec/fft_fixed.o
+CC	libavcodec/fft_fixed_32.o
+CC	libavcodec/fft_float.o
+CC	libavcodec/fft_init_table.o
+CC	libavcodec/ffwavesynth.o
+CC	libavcodec/flac.o
+CC	libavcodec/flac_parser.o
+CC	libavcodec/flacdata.o
+CC	libavcodec/flacdec.o
+CC	libavcodec/flacdsp.o
+CC	libavcodec/fmtconvert.o
+CC	libavcodec/g722.o
+CC	libavcodec/g722dec.o
+CC	libavcodec/g723_1.o
+CC	libavcodec/g726.o
+CC	libavcodec/g729dec.o
+CC	libavcodec/g729postfilter.o
+CC	libavcodec/golomb.o
+CC	libavcodec/gsm_parser.o
+CC	libavcodec/gsmdec.o
+CC	libavcodec/gsmdec_data.o
+CC	libavcodec/h261_parser.o
+CC	libavcodec/h263.o
+CC	libavcodec/h263_parser.o
+CC	libavcodec/h263dec.o
+CC	libavcodec/h264.o
+CC	libavcodec/h264_cabac.o
+CC	libavcodec/h264_cavlc.o
+libavcodec/h263dec.c: In function ‘ff_h263_decode_frame’:
+libavcodec/h263dec.c:414:1: warning: label ‘retry’ defined but not used [-Wunused-label]
+ retry:
+ ^
+CC	libavcodec/h264_direct.o
+CC	libavcodec/h264_loopfilter.o
+CC	libavcodec/h264_mp4toannexb_bsf.o
+CC	libavcodec/h264_parser.o
+CC	libavcodec/h264_ps.o
+libavcodec/h264_cavlc.c: In function ‘decode_residual’:
+libavcodec/h264_cavlc.c:600:46: warning: array subscript is above array bounds [-Warray-bounds]
+             ((type*)block)[*scantable]= level[i]; \
+                                              ^
+libavcodec/h264_cavlc.c:620:9: note: in expansion of macro ‘STORE_BLOCK’
+         STORE_BLOCK(int32_t)
+         ^
+libavcodec/h264_cavlc.c:600:46: warning: array subscript is above array bounds [-Warray-bounds]
+             ((type*)block)[*scantable]= level[i]; \
+                                              ^
+libavcodec/h264_cavlc.c:622:9: note: in expansion of macro ‘STORE_BLOCK’
+         STORE_BLOCK(int16_t)
+         ^
+CC	libavcodec/h264_refs.o
+CC	libavcodec/h264_sei.o
+CC	libavcodec/h264chroma.o
+CC	libavcodec/h264dsp.o
+CC	libavcodec/h264idct.o
+CC	libavcodec/h264pred.o
+CC	libavcodec/h264qpel.o
+CC	libavcodec/hevc.o
+libavcodec/hevc.c: In function ‘hls_slice_data_wpp’:
+libavcodec/hevc.c:1944:13: warning: assignment discards ‘const’ qualifier from pointer target type [enabled by default]
+     s->data = nal;
+             ^
+CC	libavcodec/hevc_cabac.o
+CC	libavcodec/hevc_filter.o
+libavcodec/hevc.c: In function ‘hls_prediction_unit’:
+libavcodec/hevc.c:1218:18: warning: ‘ref0’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+         chroma_mc(s, tmp, tmp2, tmpstride, ref0->frame,
+                  ^
+libavcodec/hevc_filter.c: In function ‘ff_hevc_hls_filter’:
+libavcodec/hevc_filter.c:416:72: warning: ‘left_beta_offset’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+                 beta[0]  = betatable[av_clip(qp0 + ((beta_offset >> 1) << 1), 0, MAX_QP)];
+                                                                        ^
+libavcodec/hevc_filter.c:330:25: note: ‘left_beta_offset’ was declared here
+     int left_tc_offset, left_beta_offset;
+                         ^
+libavcodec/hevc_filter.c:311:105: warning: ‘left_tc_offset’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ #define TC_CALC(qp, bs) tctable[av_clip((qp) + DEFAULT_INTRA_TC_OFFSET * ((bs) - 1) + ((tc_offset >> 1) << 1), 0, MAX_QP + DEFAULT_INTRA_TC_OFFSET)]
+                                                                                                         ^
+libavcodec/hevc_filter.c:330:9: note: ‘left_tc_offset’ was declared here
+     int left_tc_offset, left_beta_offset;
+         ^
+CC	libavcodec/hevc_mvs.o
+CC	libavcodec/hevc_parser.o
+libavcodec/hevc_cabac.c: In function ‘ff_hevc_hls_residual_coding’:
+libavcodec/hevc_cabac.c:1372:37: warning: ‘dc_scale’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+                             scale_m = dc_scale;
+                                     ^
+libavcodec/hevc_cabac.c:1370:51: warning: ‘scale_matrix’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+                             scale_m = scale_matrix[pos];
+                                                   ^
+libavcodec/hevc_cabac.c:1375:62: warning: ‘scale’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+                     trans_coeff_level = (trans_coeff_level * (int64_t)scale * (int64_t)scale_m + add) >> shift;
+                                                              ^
+libavcodec/hevc_cabac.c:1375:96: warning: ‘add’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+                     trans_coeff_level = (trans_coeff_level * (int64_t)scale * (int64_t)scale_m + add) >> shift;
+                                                                                                ^
+libavcodec/hevc_cabac.c:1375:39: warning: ‘shift’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+                     trans_coeff_level = (trans_coeff_level * (int64_t)scale * (int64_t)scale_m + add) >> shift;
+                                       ^
+CC	libavcodec/hevc_ps.o
+CC	libavcodec/hevc_refs.o
+CC	libavcodec/hevc_sei.o
+CC	libavcodec/hevcdsp.o
+libavcodec/hevc_refs.c: In function ‘ff_hevc_output_frame’:
+libavcodec/hevc_refs.c:175:24: warning: ‘min_idx’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+             HEVCFrame *frame = &s->DPB[min_idx];
+                        ^
+CC	libavcodec/hevcpred.o
+CC	libavcodec/hpeldsp.o
+CC	libavcodec/huffman.o
+CC	libavcodec/iff.o
+libavcodec/iff.c:321:20: warning: ‘decode_init’ defined but not used [-Wunused-function]
+ static av_cold int decode_init(AVCodecContext *avctx)
+                    ^
+libavcodec/iff.c:652:12: warning: ‘decode_frame’ defined but not used [-Wunused-function]
+ static int decode_frame(AVCodecContext *avctx,
+            ^
+libavcodec/iff.c:861:20: warning: ‘decode_end’ defined but not used [-Wunused-function]
+ static av_cold int decode_end(AVCodecContext *avctx)
+                    ^
+CC	libavcodec/imc.o
+CC	libavcodec/imgconvert.o
+libavcodec/hevc_ps.c: In function ‘ff_hevc_decode_nal_sps’:
+libavcodec/hevc_ps.c:753:79: warning: array subscript is above array bounds [-Warray-bounds]
+             sps->temporal_layer[i].max_dec_pic_buffering = sps->temporal_layer[start].max_dec_pic_buffering;
+                                                                               ^
+libavcodec/hevc_ps.c:754:79: warning: array subscript is above array bounds [-Warray-bounds]
+             sps->temporal_layer[i].num_reorder_pics      = sps->temporal_layer[start].num_reorder_pics;
+                                                                               ^
+libavcodec/hevc_ps.c:755:79: warning: array subscript is above array bounds [-Warray-bounds]
+             sps->temporal_layer[i].max_latency_increase  = sps->temporal_layer[start].max_latency_increase;
+                                                                               ^
+CC	libavcodec/imx_dump_header_bsf.o
+CC	libavcodec/interplayvideo.o
+CC	libavcodec/ituh263dec.o
+CC	libavcodec/jacosubdec.o
+libavcodec/ituh263dec.c: In function ‘h263_decode_block’:
+libavcodec/ituh263dec.c:444:15: warning: ‘level’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+     int code, level, i, j, last, run;
+               ^
+CC	libavcodec/jrevdct.o
+libavcodec/interplayvideo.c: In function ‘ipvideo_decode_block_opcode_0xD_16’:
+libavcodec/interplayvideo.c:830:26: warning: ‘P[1]’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+             pixel_ptr[x] = P[x >> 2];
+                          ^
+libavcodec/interplayvideo.c:830:26: warning: ‘P[0]’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+libavcodec/interplayvideo.c: In function ‘ipvideo_decode_block_opcode_0xD’:
+libavcodec/interplayvideo.c:468:19: warning: ‘P[1]’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+     unsigned char P[2];
+                   ^
+libavcodec/interplayvideo.c:468:19: warning: ‘P[0]’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+CC	libavcodec/kbdwin.o
+CC	libavcodec/latm_parser.o
+CC	libavcodec/log2_tab.o
+CC	libavcodec/lsp.o
+CC	libavcodec/mace.o
+CC	libavcodec/mathtables.o
+CC	libavcodec/mdct_fixed.o
+CC	libavcodec/mdct_fixed_32.o
+CC	libavcodec/mdct_float.o
+CC	libavcodec/metasound.o
+CC	libavcodec/metasound_data.o
+CC	libavcodec/microdvddec.o
+CC	libavcodec/mjpeg.o
+CC	libavcodec/mjpeg2jpeg_bsf.o
+CC	libavcodec/mjpeg_parser.o
+CC	libavcodec/mjpega_dump_header_bsf.o
+CC	libavcodec/mlp.o
+CC	libavcodec/mlp_parser.o
+CC	libavcodec/mlpdec.o
+CC	libavcodec/mlpdsp.o
+CC	libavcodec/movsub_bsf.o
+CC	libavcodec/movtextdec.o
+CC	libavcodec/mp3_header_compress_bsf.o
+CC	libavcodec/mp3_header_decompress_bsf.o
+CC	libavcodec/mpc.o
+CC	libavcodec/mpc7.o
+CC	libavcodec/mpc8.o
+CC	libavcodec/mpeg12.o
+CC	libavcodec/mpeg12data.o
+CC	libavcodec/mpeg12dec.o
+CC	libavcodec/mpeg4audio.o
+CC	libavcodec/mpeg4video.o
+CC	libavcodec/mpeg4video_parser.o
+CC	libavcodec/mpeg4videodec.o
+CC	libavcodec/mpegaudio.o
+CC	libavcodec/mpegaudio_parser.o
+CC	libavcodec/mpegaudiodata.o
+HOSTCC	libavcodec/mpegaudio_tablegen.o
+CC	libavcodec/mpegaudiodecheader.o
+CC	libavcodec/mpegaudiodsp.o
+CC	libavcodec/mpegaudiodsp_data.o
+CC	libavcodec/mpegaudiodsp_fixed.o
+CC	libavcodec/mpegaudiodsp_float.o
+CC	libavcodec/mpegvideo.o
+CC	libavcodec/mpegvideo_motion.o
+CC	libavcodec/mpegvideo_parser.o
+CC	libavcodec/mpl2dec.o
+CC	libavcodec/msgsmdec.o
+CC	libavcodec/msmpeg4.o
+CC	libavcodec/msmpeg4data.o
+CC	libavcodec/nellymoser.o
+CC	libavcodec/nellymoserdec.o
+CC	libavcodec/noise_bsf.o
+CC	libavcodec/options.o
+CC	libavcodec/paf.o
+In file included from libavcodec/options.c:35:0:
+libavcodec/options_table.h:347:1: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
+ {"request_channels", "set desired number of audio channels", OFFSET(request_channels), AV_OPT_TYPE_INT, {.i64 = DEFAULT }, 0, INT_MAX, A|D},
+ ^
+libavcodec/options.c: In function ‘avcodec_get_context_defaults3’:
+libavcodec/options.c:114:5: warning: ‘av_opt_set_defaults2’ is deprecated (declared at ./libavutil/opt.h:399) [-Wdeprecated-declarations]
+     av_opt_set_defaults2(s, flags, flags);
+     ^
+CC	libavcodec/parser.o
+CC	libavcodec/pcm-bluray.o
+CC	libavcodec/pcm-dvd.o
+HOSTCC	libavcodec/pcm_tablegen.o
+CC	libavcodec/pgssubdec.o
+CC	libavcodec/png_parser.o
+CC	libavcodec/pnm.o
+CC	libavcodec/pnm_parser.o
+CC	libavcodec/proresdata.o
+CC	libavcodec/proresdec_lgpl.o
+CC	libavcodec/proresdsp.o
+CC	libavcodec/pthread.o
+CC	libavcodec/qcelpdec.o
+HOSTCC	libavcodec/qdm2_tablegen.o
+CC	libavcodec/ra144.o
+libavcodec/pthread.c: In function ‘frame_worker_thread’:
+libavcodec/pthread.c:340:9: warning: ‘get_buffer’ is deprecated (declared at libavcodec/avcodec.h:2022) [-Wdeprecated-declarations]
+         if (!codec->update_thread_context && THREAD_SAFE_CALLBACKS(avctx))
+         ^
+libavcodec/pthread.c: In function ‘ff_thread_can_start_frame’:
+libavcodec/pthread.c:924:9: warning: ‘get_buffer’ is deprecated (declared at libavcodec/avcodec.h:2022) [-Wdeprecated-declarations]
+         (avctx->codec->update_thread_context || !THREAD_SAFE_CALLBACKS(avctx))) {
+         ^
+libavcodec/pthread.c: In function ‘thread_get_buffer_internal’:
+libavcodec/pthread.c:943:9: warning: ‘get_buffer’ is deprecated (declared at libavcodec/avcodec.h:2022) [-Wdeprecated-declarations]
+         (avctx->codec->update_thread_context || !THREAD_SAFE_CALLBACKS(avctx))) {
+         ^
+libavcodec/pthread.c:984:5: warning: ‘get_buffer’ is deprecated (declared at libavcodec/avcodec.h:2022) [-Wdeprecated-declarations]
+     if (!THREAD_SAFE_CALLBACKS(avctx) && !avctx->codec->update_thread_context)
+     ^
+CC	libavcodec/ra144dec.o
+CC	libavcodec/ra288.o
+CC	libavcodec/ralf.o
+CC	libavcodec/raw.o
+CC	libavcodec/rawdec.o
+CC	libavcodec/rdft.o
+CC	libavcodec/realtextdec.o
+libavcodec/rdft.c: In function ‘ff_rdft_init’:
+libavcodec/rdft.c:103:18: warning: unused variable ‘theta’ [-Wunused-variable]
+     const double theta = (trans == DFT_R2C || trans == DFT_C2R ? -1 : 1)*2*M_PI/n;
+                  ^
+libavcodec/rdft.c:102:9: warning: unused variable ‘i’ [-Wunused-variable]
+     int i;
+         ^
+CC	libavcodec/remove_extradata_bsf.o
+CC	libavcodec/resample.o
+CC	libavcodec/resample2.o
+CC	libavcodec/rv34_parser.o
+CC	libavcodec/s302m.o
+CC	libavcodec/samidec.o
+libavcodec/resample.c: In function ‘av_audio_resample_init’:
+libavcodec/resample.c:273:5: warning: ‘av_resample_init’ is deprecated (declared at libavcodec/avcodec.h:4369) [-Wdeprecated-declarations]
+     s->resample_context = av_resample_init(output_rate, input_rate,
+     ^
+libavcodec/resample.c: In function ‘audio_resample’:
+libavcodec/resample.c:384:9: warning: ‘av_resample’ is deprecated (declared at libavcodec/avcodec.h:4381) [-Wdeprecated-declarations]
+         nb_samples1 = av_resample(s->resample_context, buftmp3[i], bufin[i],
+         ^
+libavcodec/resample.c: In function ‘audio_resample_close’:
+libavcodec/resample.c:425:5: warning: ‘av_resample_close’ is deprecated (declared at libavcodec/avcodec.h:4399) [-Wdeprecated-declarations]
+     av_resample_close(s->resample_context);
+     ^
+CC	libavcodec/sbrdsp.o
+CC	libavcodec/sgirledec.o
+CC	libavcodec/shorten.o
+CC	libavcodec/simple_idct.o
+HOSTCC	libavcodec/sinewin_tablegen.o
+CC	libavcodec/sipr.o
+CC	libavcodec/sipr16k.o
+CC	libavcodec/smacker.o
+CC	libavcodec/smvjpegdec.o
+CC	libavcodec/sonic.o
+CC	libavcodec/srtdec.o
+CC	libavcodec/subviewerdec.o
+CC	libavcodec/synth_filter.o
+CC	libavcodec/tak.o
+CC	libavcodec/tak_parser.o
+CC	libavcodec/takdec.o
+CC	libavcodec/targa_y216dec.o
+CC	libavcodec/textdec.o
+CC	libavcodec/timecode.o
+CC	libavcodec/tta.o
+CC	libavcodec/truespeech.o
+CC	libavcodec/ttadata.o
+CC	libavcodec/twinvq.o
+CC	libavcodec/twinvqdec.o
+CC	libavcodec/utils.o
+In file included from libavcodec/tak.h:33:0,
+                 from libavcodec/takdec.c:30:
+libavcodec/takdec.c: In function ‘decode_subframe’:
+libavcodec/get_bits.h:192:49: warning: ‘x’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ #define SHOW_SBITS_LE(name, gb, num) sign_extend(name ## _cache, num)
+                                                 ^
+libavcodec/takdec.c:374:14: note: ‘x’ was declared here
+     int tmp, x, y, i, j, ret = 0;
+              ^
+CC	libavcodec/vc1.o
+libavcodec/utils.c: In function ‘reget_buffer_internal’:
+libavcodec/utils.c:979:19: warning: passing argument 3 of ‘av_image_copy’ from incompatible pointer type [enabled by default]
+                   frame->format, frame->width, frame->height);
+                   ^
+In file included from libavcodec/utils.c:40:0:
+./libavutil/imgutils.h:118:6: note: expected ‘const uint8_t **’ but argument is of type ‘uint8_t **’
+ void av_image_copy(uint8_t *dst_data[4], int dst_linesizes[4],
+      ^
+libavcodec/utils.c: In function ‘ff_alloc_packet2’:
+libavcodec/utils.c:1518:13: warning: ‘destruct’ is deprecated (declared at libavcodec/avcodec.h:1088) [-Wdeprecated-declarations]
+             avpkt->destruct = NULL;
+             ^
+libavcodec/utils.c: In function ‘avcodec_encode_audio2’:
+libavcodec/utils.c:1685:13: warning: ‘destruct’ is deprecated (declared at libavcodec/avcodec.h:1088) [-Wdeprecated-declarations]
+             avpkt->destruct = user_pkt.destruct;
+             ^
+libavcodec/utils.c:1685:13: warning: ‘destruct’ is deprecated (declared at libavcodec/avcodec.h:1088) [-Wdeprecated-declarations]
+libavcodec/utils.c: In function ‘avcodec_encode_video2’:
+libavcodec/utils.c:1879:13: warning: ‘destruct’ is deprecated (declared at libavcodec/avcodec.h:1088) [-Wdeprecated-declarations]
+             avpkt->destruct = user_pkt.destruct;
+             ^
+libavcodec/utils.c:1879:13: warning: ‘destruct’ is deprecated (declared at libavcodec/avcodec.h:1088) [-Wdeprecated-declarations]
+libavcodec/utils.c: In function ‘avcodec_decode_audio3’:
+libavcodec/utils.c:2123:5: warning: ‘get_buffer’ is deprecated (declared at libavcodec/avcodec.h:2022) [-Wdeprecated-declarations]
+     if (avctx->get_buffer != avcodec_default_get_buffer) {
+     ^
+libavcodec/utils.c:2123:5: warning: ‘avcodec_default_get_buffer’ is deprecated (declared at libavcodec/utils.c:775) [-Wdeprecated-declarations]
+libavcodec/utils.c:2128:9: warning: ‘get_buffer’ is deprecated (declared at libavcodec/avcodec.h:2022) [-Wdeprecated-declarations]
+         avctx->get_buffer = avcodec_default_get_buffer;
+         ^
+libavcodec/utils.c:2128:9: warning: ‘avcodec_default_get_buffer’ is deprecated (declared at libavcodec/utils.c:775) [-Wdeprecated-declarations]
+libavcodec/utils.c:2129:9: warning: ‘release_buffer’ is deprecated (declared at libavcodec/avcodec.h:2036) [-Wdeprecated-declarations]
+         avctx->release_buffer = avcodec_default_release_buffer;
+         ^
+libavcodec/utils.c:2129:9: warning: ‘avcodec_default_release_buffer’ is deprecated (declared at libavcodec/utils.c:995) [-Wdeprecated-declarations]
+CC	libavcodec/vc1_parser.o
+In file included from libavcodec/tak.h:33:0,
+                 from libavcodec/takdec.c:30:
+libavcodec/takdec.c: In function ‘decorrelate’:
+libavcodec/get_bits.h:192:49: warning: ‘code_size’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ #define SHOW_SBITS_LE(name, gb, num) sign_extend(name ## _cache, num)
+                                                 ^
+libavcodec/takdec.c:590:21: note: ‘code_size’ was declared here
+         int tmp, x, code_size;
+                     ^
+libavcodec/takdec.c: In function ‘tak_decode_frame’:
+libavcodec/takdec.c:866:53: warning: ‘hsize’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+                              get_bits_count(gb) / 8 - hsize)) {
+                                                     ^
+CC	libavcodec/vc1data.o
+CC	libavcodec/videodsp.o
+CC	libavcodec/vima.o
+CC	libavcodec/vmdav.o
+CC	libavcodec/vorbis.o
+CC	libavcodec/vorbis_data.o
+CC	libavcodec/vorbis_parser.o
+CC	libavcodec/vorbisdec.o
+CC	libavcodec/vorbisdsp.o
+CC	libavcodec/vp3_parser.o
+CC	libavcodec/vp3dsp.o
+CC	libavcodec/vp56.o
+CC	libavcodec/vp56data.o
+CC	libavcodec/vp56dsp.o
+CC	libavcodec/vp56rac.o
+CC	libavcodec/vp6.o
+libavcodec/vp56.c: In function ‘ff_vp56_init_context’:
+libavcodec/vp56.c:702:0: warning: "T" redefined [enabled by default]
+ #define T(x) (x >> 3) | ((x & 7) << 3)
+ ^
+In file included from libavcodec/vp56.h:245:0,
+                 from libavcodec/vp56.c:30:
+libavcodec/arm/vp56_arith.h:29:0: note: this is the location of the previous definition
+ #   define T(x)
+ ^
+CC	libavcodec/vp6dsp.o
+CC	libavcodec/vp8.o
+CC	libavcodec/vp8_parser.o
+CC	libavcodec/vp8dsp.o
+libavcodec/vp8.c: In function ‘webp_decode_frame’:
+libavcodec/vp8.c:2149:14: warning: assignment discards ‘const’ qualifier from pointer target type [enabled by default]
+     pkt.data = buf;
+              ^
+libavcodec/vp8.c: At top level:
+libavcodec/vp8.c:2111:12: warning: ‘webp_decode_frame’ defined but not used [-Wunused-function]
+ static int webp_decode_frame(AVCodecContext *avctx, void *data, int *data_size,
+            ^
+CC	libavcodec/vp9.o
+CC	libavcodec/vp9dsp.o
+CC	libavcodec/vqavideo.o
+CC	libavcodec/wavpack.o
+CC	libavcodec/webvttdec.o
+CC	libavcodec/wma.o
+libavcodec/wma.c: In function ‘ff_wma_init’:
+libavcodec/wma.c:314:23: warning: assignment discards ‘const’ qualifier from pointer target type [enabled by default]
+         s->windows[i] = ff_sine_windows[s->frame_len_bits - i];
+                       ^
+CC	libavcodec/wma_common.o
+CC	libavcodec/wmadec.o
+libavcodec/wavpack.c: In function ‘wavpack_decode_frame’:
+libavcodec/wavpack.c:1000:19: warning: ‘samples_r’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+             memcpy(samples_r, samples_l, bpp * s->samples);
+                   ^
+libavcodec/wavpack.c:610:23: note: ‘samples_r’ was declared here
+     void *samples_l, *samples_r;
+                       ^
+CC	libavcodec/wmalosslessdec.o
+libavcodec/wmalosslessdec.c: In function ‘decode_frame’:
+libavcodec/wmalosslessdec.c:678:45: warning: array subscript is above array bounds [-Warray-bounds]
+                          s->mclms_coeffs_cur[i + num_channels * ich];
+                                             ^
+CC	libavcodec/wmaprodec.o
+CC	libavcodec/wmavoice.o
+libavcodec/vp9.c: In function ‘intra_recon.isra.4’:
+libavcodec/vp9.c:2081:62: warning: ‘topleft’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+             (!edges[mode].needs_topleft || (have_left && top == topleft)) &&
+                                                              ^
+libavcodec/vp9.c:2059:24: note: ‘topleft’ was declared here
+         uint8_t *top, *topleft;
+                        ^
+libavcodec/vp9.c:2081:62: warning: ‘topleft’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+             (!edges[mode].needs_topleft || (have_left && top == topleft)) &&
+                                                              ^
+libavcodec/vp9.c:2059:24: note: ‘topleft’ was declared here
+         uint8_t *top, *topleft;
+                        ^
+libavcodec/vp9.c:2107:38: warning: ‘top’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+                     memcpy(&(*a)[4], &top[4], 4);
+                                      ^
+libavcodec/vp9.c:2059:18: note: ‘top’ was declared here
+         uint8_t *top, *topleft;
+                  ^
+libavcodec/vp9.c:2107:38: warning: ‘top’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+                     memcpy(&(*a)[4], &top[4], 4);
+                                      ^
+libavcodec/vp9.c:2059:18: note: ‘top’ was declared here
+         uint8_t *top, *topleft;
+                  ^
+libavcodec/wmaprodec.c: In function ‘decode_init’:
+libavcodec/wmaprodec.c:465:48: warning: assignment discards ‘const’ qualifier from pointer target type [enabled by default]
+         s->windows[WMAPRO_BLOCK_SIZES - i - 1] = ff_sine_windows[win_idx];
+                                                ^
+CC	libavcodec/ws-snd1.o
+CC	libavcodec/xface.o
+CC	libavcodec/xfacedec.o
+CC	libavcodec/xiph.o
+CC	libavcodec/xl.o
+CC	libavcodec/xsubdec.o
+CC	libavutil/adler32.o
+CC	libavutil/aes.o
+CC	libavutil/arm/cpu.o
+CC	libavutil/arm/float_dsp_init_arm.o
+CC	libavutil/arm/float_dsp_init_vfp.o
+AS	libavutil/arm/float_dsp_vfp.o
+CC	libavutil/atomic.o
+CC	libavutil/audio_fifo.o
+CC	libavutil/avstring.o
+CC	libavutil/base64.o
+CC	libavutil/blowfish.o
+CC	libavutil/bprint.o
+CC	libavutil/buffer.o
+CC	libavutil/channel_layout.o
+CC	libavutil/cpu.o
+CC	libavutil/crc.o
+CC	libavutil/des.o
+CC	libavutil/dict.o
+CC	libavutil/error.o
+CC	libavutil/eval.o
+CC	libavutil/fifo.o
+libavutil/eval.c: In function ‘eval_expr’:
+libavutil/eval.c:238:21: warning: ‘av_reverse’ is deprecated (declared at libavutil/common.h:74) [-Wdeprecated-declarations]
+                     p->var[0] = av_reverse[i&255]*x_max/255;
+                     ^
+CC	libavutil/file.o
+CC	libavutil/file_open.o
+CC	libavutil/float_dsp.o
+CC	libavutil/frame.o
+CC	libavutil/hash.o
+libavutil/frame.c: In function ‘av_frame_set_qp_table’:
+libavutil/frame.c:55:5: warning: ‘qscale_table’ is deprecated (declared at libavutil/frame.h:218) [-Wdeprecated-declarations]
+     f->qscale_table = buf->data;
+     ^
+libavutil/frame.c:56:5: warning: ‘qstride’ is deprecated (declared at libavutil/frame.h:223) [-Wdeprecated-declarations]
+     f->qstride      = stride;
+     ^
+libavutil/frame.c:57:5: warning: ‘qscale_type’ is deprecated (declared at libavutil/frame.h:226) [-Wdeprecated-declarations]
+     f->qscale_type  = qp_type;
+     ^
+libavutil/frame.c: In function ‘av_frame_get_qp_table’:
+libavutil/frame.c:64:5: warning: ‘qstride’ is deprecated (declared at libavutil/frame.h:223) [-Wdeprecated-declarations]
+     *stride = f->qstride;
+     ^
+libavutil/frame.c:65:5: warning: ‘qscale_type’ is deprecated (declared at libavutil/frame.h:226) [-Wdeprecated-declarations]
+     *type   = f->qscale_type;
+     ^
+libavutil/frame.c: In function ‘av_frame_ref’:
+libavutil/frame.c:275:27: warning: passing argument 3 of ‘av_image_copy’ from incompatible pointer type [enabled by default]
+                           dst->format, dst->width, dst->height);
+                           ^
+In file included from libavutil/frame.c:26:0:
+libavutil/imgutils.h:118:6: note: expected ‘const uint8_t **’ but argument is of type ‘uint8_t **’
+ void av_image_copy(uint8_t *dst_data[4], int dst_linesizes[4],
+      ^
+libavutil/frame.c: In function ‘av_frame_make_writable’:
+libavutil/frame.c:428:23: warning: passing argument 3 of ‘av_image_copy’ from incompatible pointer type [enabled by default]
+                       frame->format, frame->width, frame->height);
+                       ^
+In file included from libavutil/frame.c:26:0:
+libavutil/imgutils.h:118:6: note: expected ‘const uint8_t **’ but argument is of type ‘uint8_t **’
+ void av_image_copy(uint8_t *dst_data[4], int dst_linesizes[4],
+      ^
+libavutil/frame.c: In function ‘av_frame_copy_props’:
+libavutil/frame.c:461:5: warning: ‘type’ is deprecated (declared at libavutil/frame.h:281) [-Wdeprecated-declarations]
+     dst->type                = src->type;
+     ^
+libavutil/frame.c:461:5: warning: ‘type’ is deprecated (declared at libavutil/frame.h:281) [-Wdeprecated-declarations]
+libavutil/frame.c:498:5: warning: ‘qscale_table’ is deprecated (declared at libavutil/frame.h:218) [-Wdeprecated-declarations]
+     dst->qscale_table = NULL;
+     ^
+libavutil/frame.c:499:5: warning: ‘qstride’ is deprecated (declared at libavutil/frame.h:223) [-Wdeprecated-declarations]
+     dst->qstride      = 0;
+     ^
+libavutil/frame.c:500:5: warning: ‘qscale_type’ is deprecated (declared at libavutil/frame.h:226) [-Wdeprecated-declarations]
+     dst->qscale_type  = 0;
+     ^
+libavutil/frame.c:504:13: warning: ‘qscale_table’ is deprecated (declared at libavutil/frame.h:218) [-Wdeprecated-declarations]
+             dst->qscale_table = dst->qp_table_buf->data;
+             ^
+libavutil/frame.c:505:13: warning: ‘qstride’ is deprecated (declared at libavutil/frame.h:223) [-Wdeprecated-declarations]
+             dst->qstride      = src->qstride;
+             ^
+libavutil/frame.c:505:13: warning: ‘qstride’ is deprecated (declared at libavutil/frame.h:223) [-Wdeprecated-declarations]
+libavutil/frame.c:506:13: warning: ‘qscale_type’ is deprecated (declared at libavutil/frame.h:226) [-Wdeprecated-declarations]
+             dst->qscale_type  = src->qscale_type;
+             ^
+libavutil/frame.c:506:13: warning: ‘qscale_type’ is deprecated (declared at libavutil/frame.h:226) [-Wdeprecated-declarations]
+CC	libavutil/hmac.o
+CC	libavutil/imgutils.o
+CC	libavutil/intfloat_readwrite.o
+CC	libavutil/intmath.o
+CC	libavutil/lfg.o
+CC	libavutil/lls.o
+CC	libavutil/log.o
+CC	libavutil/log2_tab.o
+CC	libavutil/lzo.o
+CC	libavutil/mathematics.o
+CC	libavutil/md5.o
+CC	libavutil/mem.o
+CC	libavutil/murmur3.o
+CC	libavutil/opt.o
+CC	libavutil/parseutils.o
+CC	libavutil/pixdesc.o
+CC	libavutil/random_seed.o
+CC	libavutil/rational.o
+libavutil/opt.c: In function ‘av_find_opt’:
+libavutil/opt.c:49:5: warning: ‘av_next_option’ is deprecated (declared at libavutil/opt.h:376) [-Wdeprecated-declarations]
+     while ((o = av_next_option(v, o))) {
+     ^
+libavutil/pixdesc.c: In function ‘ff_check_pixfmt_descriptors’:
+libavutil/pixdesc.c:1997:5: warning: ‘av_pix_fmt_descriptors’ is deprecated (declared at libavutil/pixdesc.c:132) [-Wdeprecated-declarations]
+     for (i=0; i<FF_ARRAY_ELEMS(av_pix_fmt_descriptors); i++) {
+     ^
+libavutil/pixdesc.c:1997:5: warning: ‘av_pix_fmt_descriptors’ is deprecated (declared at libavutil/pixdesc.c:132) [-Wdeprecated-declarations]
+libavutil/pixdesc.c:1998:9: warning: ‘av_pix_fmt_descriptors’ is deprecated (declared at libavutil/pixdesc.c:132) [-Wdeprecated-declarations]
+         const AVPixFmtDescriptor *d = &av_pix_fmt_descriptors[i];
+         ^
+libavutil/opt.c: In function ‘av_opt_set_defaults’:
+libavutil/opt.c:1067:5: warning: ‘av_opt_set_defaults2’ is deprecated (declared at libavutil/opt.h:399) [-Wdeprecated-declarations]
+     av_opt_set_defaults2(s, 0, 0);
+     ^
+CC	libavutil/rc4.o
+CC	libavutil/ripemd.o
+CC	libavutil/samplefmt.o
+CC	libavutil/sha.o
+CC	libavutil/sha512.o
+CC	libavutil/time.o
+CC	libavutil/timecode.o
+CC	libavutil/tree.o
+CC	libavutil/utils.o
+CC	libavutil/xga_font_data.o
+CC	libavutil/xtea.o
+CC	libavfilter/allfilters.o
+CC	libavfilter/audio.o
+libavfilter/audio.c: In function ‘avfilter_get_audio_buffer_ref_from_arrays’:
+libavfilter/audio.c:166:5: warning: ‘avfilter_get_audio_buffer_ref_from_arrays_channels’ is deprecated (declared at libavfilter/audio.c:84) [-Wdeprecated-declarations]
+     return avfilter_get_audio_buffer_ref_from_arrays_channels(data, linesize, perms,
+     ^
+CC	libavfilter/avcodec.o
+CC	libavfilter/avfilter.o
+CC	libavfilter/avfiltergraph.o
+libavfilter/avcodec.c: In function ‘avfilter_get_video_buffer_ref_from_frame’:
+libavfilter/avcodec.c:36:9: warning: ‘avfilter_get_video_buffer_ref_from_arrays’ is deprecated (declared at libavfilter/avfilter.h:908) [-Wdeprecated-declarations]
+         avfilter_get_video_buffer_ref_from_arrays(frame->data, frame->linesize, perms,
+         ^
+libavfilter/avcodec.c:41:5: warning: ‘avfilter_copy_frame_props’ is deprecated (declared at libavfilter/avfilter.h:1108) [-Wdeprecated-declarations]
+     if (avfilter_copy_frame_props(picref, frame) < 0) {
+     ^
+libavfilter/avcodec.c:43:9: warning: ‘avfilter_unref_bufferp’ is deprecated (declared at libavfilter/avfilter.h:236) [-Wdeprecated-declarations]
+         avfilter_unref_bufferp(&picref);
+         ^
+libavfilter/avcodec.c: In function ‘avfilter_get_audio_buffer_ref_from_frame’:
+libavfilter/avcodec.c:60:5: warning: ‘avfilter_get_audio_buffer_ref_from_arrays_channels’ is deprecated (declared at libavfilter/avfilter.h:946) [-Wdeprecated-declarations]
+     samplesref = avfilter_get_audio_buffer_ref_from_arrays_channels(
+     ^
+libavfilter/avcodec.c:65:5: warning: ‘avfilter_copy_frame_props’ is deprecated (declared at libavfilter/avfilter.h:1108) [-Wdeprecated-declarations]
+     if (avfilter_copy_frame_props(samplesref, frame) < 0) {
+     ^
+libavfilter/avcodec.c:67:9: warning: ‘avfilter_unref_bufferp’ is deprecated (declared at libavfilter/avfilter.h:236) [-Wdeprecated-declarations]
+         avfilter_unref_bufferp(&samplesref);
+         ^
+libavfilter/avcodec.c: In function ‘avfilter_get_buffer_ref_from_frame’:
+libavfilter/avcodec.c:78:9: warning: ‘avfilter_get_video_buffer_ref_from_frame’ is deprecated (declared at libavfilter/avcodec.c:32) [-Wdeprecated-declarations]
+         return avfilter_get_video_buffer_ref_from_frame(frame, perms);
+         ^
+libavfilter/avcodec.c:80:9: warning: ‘avfilter_get_audio_buffer_ref_from_frame’ is deprecated (declared at libavfilter/avcodec.c:48) [-Wdeprecated-declarations]
+         return avfilter_get_audio_buffer_ref_from_frame(frame, perms);
+         ^
+libavfilter/avcodec.c: In function ‘avfilter_fill_frame_from_audio_buffer_ref’:
+libavfilter/avcodec.c:143:5: warning: ‘avfilter_copy_buf_props’ is deprecated (declared at libavfilter/avcodec.c:86) [-Wdeprecated-declarations]
+     return avfilter_copy_buf_props(frame, samplesref);
+     ^
+libavfilter/avcodec.c: In function ‘avfilter_fill_frame_from_video_buffer_ref’:
+libavfilter/avcodec.c:149:5: warning: ‘avfilter_copy_buf_props’ is deprecated (declared at libavfilter/avcodec.c:86) [-Wdeprecated-declarations]
+     return avfilter_copy_buf_props(frame, picref);
+     ^
+libavfilter/avcodec.c: In function ‘avfilter_fill_frame_from_buffer_ref’:
+libavfilter/avcodec.c:155:5: warning: ‘avfilter_copy_buf_props’ is deprecated (declared at libavfilter/avcodec.c:86) [-Wdeprecated-declarations]
+     return avfilter_copy_buf_props(frame, ref);
+     ^
+libavcodec/vp9.c: In function ‘decode_sb’:
+libavcodec/vp9.c:2791:5: warning: ‘res’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+     return res;
+     ^
+CC	libavfilter/buffer.o
+CC	libavfilter/buffersink.o
+CC	libavfilter/buffersrc.o
+libavfilter/buffer.c: In function ‘avfilter_unref_bufferp’:
+libavfilter/buffer.c:116:5: warning: ‘avfilter_unref_buffer’ is deprecated (declared at libavfilter/buffer.c:97) [-Wdeprecated-declarations]
+     avfilter_unref_buffer(*ref);
+     ^
+CC	libavfilter/drawutils.o
+CC	libavfilter/fifo.o
+CC	libavfilter/formats.o
+libavfilter/avfiltergraph.c: In function ‘avfilter_graph_config’:
+libavfilter/avfiltergraph.c:808:48: warning: ‘best_idx’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+                outlink->in_samplerates->formats[best_idx]);
+                                                ^
+libavfilter/avfiltergraph.c:793:13: note: ‘best_idx’ was declared here
+         int best_idx, best_diff = INT_MAX;
+             ^
+CC	libavfilter/graphdump.o
+CC	libavfilter/graphparser.o
+libavcodec/vp9.c: In function ‘vp9_decode_frame’:
+libavcodec/vp9.c:3389:24: warning: ‘res’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+                     if ((res = decode_sb(ctx, row, col, lflvl_ptr,
+                        ^
+CC	libavfilter/lavfutils.o
+CC	libavfilter/lswsutils.o
+CC	libavfilter/opencl_allkernels.o
+CC	libavfilter/pthread.o
+CC	libavfilter/transform.o
+CC	libavfilter/video.o
+CC	libswresample/arm/audio_convert_init.o
+CC	libswresample/audioconvert.o
+CC	libswresample/dither.o
+CC	libswresample/log2_tab.o
+CC	libswresample/rematrix.o
+CC	libswresample/resample.o
+CC	libswresample/swresample.o
+CC	libswscale/input.o
+CC	libswscale/options.o
+CC	libswscale/output.o
+CC	libswscale/rgb2rgb.o
+CC	libswscale/swscale.o
+CC	libswscale/swscale_unscaled.o
+CC	libswscale/utils.o
+CC	libswscale/yuv2rgb.o
+HOSTLD	libavcodec/cbrt_tablegen
+HOSTLD	libavcodec/aacps_tablegen
+HOSTLD	libavcodec/aac_tablegen
+HOSTLD	libavcodec/cos_tablegen
+HOSTLD	libavcodec/mpegaudio_tablegen
+HOSTLD	libavcodec/pcm_tablegen
+HOSTLD	libavcodec/qdm2_tablegen
+GEN	libavcodec/sin_tables.c
+HOSTLD	libavcodec/sinewin_tablegen
+LD	libavutil/libavutil.so.52
+GEN	libavcodec/cbrt_tables.h
+GEN	libavcodec/aacps_tables.h
+GEN	libavcodec/aac_tables.h
+GEN	libavcodec/cos_fixed_tables.c
+GEN	libavcodec/cos_tables.c
+GEN	libavcodec/mpegaudio_tables.h
+GEN	libavcodec/pcm_tables.h
+GEN	libavcodec/qdm2_tables.h
+CC	libavcodec/sin_tables.o
+GEN	libavcodec/sinewin_tables.h
+CC	libavcodec/aacdec.o
+CC	libavcodec/aacps.o
+libavcodec/aacps.c: In function ‘decorrelation’:
+libavcodec/aacps.c:689:29: warning: passing argument 5 of ‘ps->dsp.decorrelate’ from incompatible pointer type [enabled by default]
+                             transient_gain[b], g_decay_slope, nL - n0);
+                             ^
+libavcodec/aacps.c:689:29: note: expected ‘float (*)[2]’ but argument is of type ‘const float (*)[2]’
+libavcodec/aacps.c: In function ‘ff_ps_apply’:
+libavcodec/aacps.c:917:5: warning: passing argument 3 of ‘decorrelation’ from incompatible pointer type [enabled by default]
+     decorrelation(ps, Rbuf, Lbuf, is34);
+     ^
+libavcodec/aacps.c:625:13: note: expected ‘const float (*)[32][2]’ but argument is of type ‘float (*)[32][2]’
+ static void decorrelation(PSContext *ps, float (*out)[32][2], const float (*s)[32][2], int is34)
+             ^
+CC	libavcodec/aactab.o
+CC	libavcodec/cos_fixed_tables.o
+CC	libavcodec/cos_tables.o
+CC	libavcodec/mpegaudiodec.o
+CC	libavcodec/mpegaudiodec_float.o
+CC	libavcodec/pcm.o
+libavcodec/pcm.c:34:20: warning: ‘pcm_encode_init’ defined but not used [-Wunused-function]
+ static av_cold int pcm_encode_init(AVCodecContext *avctx)
+                    ^
+libavcodec/pcm.c:83:12: warning: ‘pcm_encode_frame’ defined but not used [-Wunused-function]
+ static int pcm_encode_frame(AVCodecContext *avctx, AVPacket *avpkt,
+            ^
+CC	libavcodec/qdm2.o
+CC	libavcodec/sinewin.o
+LD	libavfilter/libavfilter.so.3
+LD	libswresample/libswresample.so.0
+LD	libavcodec/libavcodec.so.55
+LD	libavformat/libavformat.so.55
+LD	libavdevice/libavdevice.so.55
+LD	libswscale/libswscale.so.2
+make[2]: Leaving directory `/home/peyman/Documents/omxplayer/omxplayer-sync-2-master/ffmpeg'
+make[1]: Leaving directory `/home/peyman/Documents/omxplayer/omxplayer-sync-2-master'
+make -f Makefile.ffmpeg install
+make[1]: Entering directory `/home/peyman/Documents/omxplayer/omxplayer-sync-2-master'
+cd ffmpeg; make -j9 DESTDIR="/home/peyman/Documents/omxplayer/omxplayer-sync-2-master/ffmpeg_compiled" install
+make[2]: Entering directory `/home/peyman/Documents/omxplayer/omxplayer-sync-2-master/ffmpeg'
+INSTALL	libavdevice/libavdevice.so
+INSTALL	libavfilter/libavfilter.so
+INSTALL	libavformat/libavformat.so
+INSTALL	libavcodec/libavcodec.so
+STRIP	install-libavdevice-shared
+INSTALL	libswresample/libswresample.so
+STRIP	install-libavfilter-shared
+INSTALL	libswscale/libswscale.so
+STRIP	install-libswresample-shared
+STRIP	install-libswscale-shared
+STRIP	install-libavformat-shared
+INSTALL	libavutil/libavutil.so
+INSTALL	libavdevice/libavdevice.pc
+INSTALL	libavfilter/asrc_abuffer.h
+INSTALL	libavfilter/avcodec.h
+INSTALL	libavfilter/avfilter.h
+INSTALL	libavfilter/avfiltergraph.h
+INSTALL	libavfilter/buffersink.h
+INSTALL	libavfilter/buffersrc.h
+INSTALL	libavfilter/version.h
+INSTALL	libavdevice/avdevice.h
+INSTALL	libavdevice/version.h
+INSTALL	libavfilter/libavfilter.pc
+STRIP	install-libavutil-shared
+INSTALL	libavformat/avformat.h
+INSTALL	libavformat/avio.h
+INSTALL	libavformat/version.h
+INSTALL	libavformat/libavformat.pc
+INSTALL	libavcodec/avcodec.h
+INSTALL	libavcodec/avfft.h
+INSTALL	libavcodec/dxva2.h
+INSTALL	libavcodec/old_codec_ids.h
+INSTALL	libavcodec/vaapi.h
+INSTALL	libavcodec/vda.h
+INSTALL	libavcodec/vdpau.h
+INSTALL	libavcodec/version.h
+INSTALL	libavcodec/xvmc.h
+INSTALL	libswresample/swresample.h
+INSTALL	libswresample/version.h
+INSTALL	libswscale/swscale.h
+INSTALL	libswscale/version.h
+INSTALL	libavcodec/libavcodec.pc
+INSTALL	libswresample/libswresample.pc
+INSTALL	libswscale/libswscale.pc
+INSTALL	libavutil/adler32.h
+INSTALL	libavutil/aes.h
+INSTALL	libavutil/attributes.h
+INSTALL	libavutil/audio_fifo.h
+INSTALL	libavutil/audioconvert.h
+INSTALL	libavutil/avassert.h
+INSTALL	libavutil/avstring.h
+INSTALL	libavutil/avutil.h
+INSTALL	libavutil/base64.h
+INSTALL	libavutil/blowfish.h
+INSTALL	libavutil/bprint.h
+INSTALL	libavutil/bswap.h
+INSTALL	libavutil/buffer.h
+INSTALL	libavutil/channel_layout.h
+INSTALL	libavutil/common.h
+INSTALL	libavutil/cpu.h
+INSTALL	libavutil/crc.h
+INSTALL	libavutil/error.h
+INSTALL	libavutil/eval.h
+INSTALL	libavutil/fifo.h
+INSTALL	libavutil/file.h
+INSTALL	libavutil/frame.h
+INSTALL	libavutil/hmac.h
+INSTALL	libavutil/imgutils.h
+INSTALL	libavutil/intfloat.h
+INSTALL	libavutil/intfloat_readwrite.h
+INSTALL	libavutil/intreadwrite.h
+INSTALL	libavutil/lfg.h
+INSTALL	libavutil/log.h
+INSTALL	libavutil/mathematics.h
+INSTALL	libavutil/md5.h
+INSTALL	libavutil/mem.h
+INSTALL	libavutil/murmur3.h
+INSTALL	libavutil/dict.h
+INSTALL	libavutil/old_pix_fmts.h
+INSTALL	libavutil/opt.h
+INSTALL	libavutil/parseutils.h
+INSTALL	libavutil/pixdesc.h
+INSTALL	libavutil/pixfmt.h
+INSTALL	libavutil/random_seed.h
+INSTALL	libavutil/rational.h
+INSTALL	libavutil/ripemd.h
+INSTALL	libavutil/samplefmt.h
+INSTALL	libavutil/sha.h
+INSTALL	libavutil/sha512.h
+INSTALL	libavutil/time.h
+INSTALL	libavutil/timecode.h
+INSTALL	libavutil/timestamp.h
+INSTALL	libavutil/version.h
+INSTALL	libavutil/xtea.h
+INSTALL	libavutil/lzo.h
+INSTALL	libavutil/avconfig.h
+INSTALL	libavutil/libavutil.pc
+STRIP	install-libavcodec-shared
+make[2]: Leaving directory `/home/peyman/Documents/omxplayer/omxplayer-sync-2-master/ffmpeg'
+arm-linux-gnueabihf-strip ffmpeg_compiled/usr/local/lib/*.so
+make[1]: Leaving directory `/home/peyman/Documents/omxplayer/omxplayer-sync-2-master'
