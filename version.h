@@ -1,7 +1,7 @@
 #ifndef __VERSION_H__
 #define __VERSION_H__
-#define VERSION_DATE "Sun, 23 Aug 2015 21:14:22 -0700"
-#define VERSION_HASH "a21c4fd"
+#define VERSION_DATE "Sun, 18 Oct 2015 21:02:23 -0700"
+#define VERSION_HASH "84aea39"
 #define VERSION_BRANCH "master"
-#define VERSION_REPO "UNKNOWN"
+#define VERSION_REPO "git@github.com:pukster/omxplayer-sync3.git"
 #endif

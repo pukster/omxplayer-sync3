@@ -1,5 +1,5 @@
 make -f Makefile.ffmpeg
-make[1]: Entering directory `/home/peyman/Documents/omxplayer/omxplayer-sync-2-master'
+make[1]: Entering directory `/home/peyman/Documents/omxplayer/omxplayer-sync3'
 git clone git://source.ffmpeg.org/ffmpeg ffmpeg; \
 	cd ffmpeg; git checkout n2.1
 Cloning into 'ffmpeg'...
@@ -16,7 +16,7 @@ do so (now or later) by using -b with the checkout command again. Example:
 
 HEAD is now at 35a7b73... update for 2.1
 cd ffmpeg; \
-	CFLAGS="-D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS -DTARGET_POSIX -DTARGET_LINUX -fPIC -DPIC -D_REENTRANT -D_HAVE_SBRK -D_LARGEFILE64_SOURCE -DHAVE_CMAKE_CONFIG -DHAVE_VMCS_CONFIG -D_REENTRANT -DUSE_VCHIQ_ARM -DVCHI_BULK_ALIGN=1 -DVCHI_BULK_GRANULARITY=1 -DEGL_SERVER_DISPMANX -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D__VIDEOCORE4__ -DGRAPHICS_X_VG=1 -U_FORTIFY_SOURCE -Wall -DHAVE_OMXLIB -DUSE_EXTERNAL_FFMPEG  -DHAVE_LIBAVCODEC_AVCODEC_H -DHAVE_LIBAVUTIL_MEM_H -DHAVE_LIBAVUTIL_AVUTIL_H -DHAVE_LIBAVFORMAT_AVFORMAT_H -DHAVE_LIBAVFILTER_AVFILTER_H -DOMX -DOMX_SKIP64BIT -marm -isystem/mnt/CYBRAN/raspi1/usr/include -isystem/mnt/CYBRAN/raspi1/usr/include/arm-linux-gnueabihf -isystem/mnt/CYBRAN/raspi1/opt/vc/include -isystem/mnt/CYBRAN/raspi1/usr/include -isystem/mnt/CYBRAN/raspi1/opt/vc/include/interface/vcos/pthreads -isystem/mnt/CYBRAN/raspi1/usr/include/freetype2 -isystem/mnt/CYBRAN/raspi1/usr/include/libavcodec -isystem/mnt/CYBRAN/raspi1/opt/vc/include/interface/vmcs_host/linux -isystem/mnt/CYBRAN/raspi1/usr/include/dbus-1.0 -isystem/mnt/CYBRAN/raspi1/usr/lib/arm-linux-gnueabihf/dbus-1.0/include/" \
+	CFLAGS="-D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS -DTARGET_POSIX -DTARGET_LINUX -fPIC -DPIC -D_REENTRANT -D_HAVE_SBRK -D_LARGEFILE64_SOURCE -DHAVE_CMAKE_CONFIG -DHAVE_VMCS_CONFIG -D_REENTRANT -DUSE_VCHIQ_ARM -DVCHI_BULK_ALIGN=1 -DVCHI_BULK_GRANULARITY=1 -DEGL_SERVER_DISPMANX -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D__VIDEOCORE4__ -DGRAPHICS_X_VG=1 -U_FORTIFY_SOURCE -Wall -DHAVE_OMXLIB -DUSE_EXTERNAL_FFMPEG  -DHAVE_LIBAVCODEC_AVCODEC_H -DHAVE_LIBAVUTIL_MEM_H -DHAVE_LIBAVUTIL_AVUTIL_H -DHAVE_LIBAVFORMAT_AVFORMAT_H -DHAVE_LIBAVFILTER_AVFILTER_H -DOMX -DOMX_SKIP64BIT -marm -isystem/mnt/CYBRAN/raspi1/usr/include/arm-linux-gnueabihf -isystem/mnt/CYBRAN/raspi1/opt/vc/include -isystem/mnt/CYBRAN/raspi1/usr/include/c++/4.6.3 -isystem/mnt/CYBRAN/raspi1/usr/include/c++/4.6/arm-linux-gnueabihf -isystem/mnt/CYBRAN/raspi1/opt/vc/include/interface/vcos/pthreads -isystem/mnt/CYBRAN/raspi1/usr/include/freetype2 -isystem/mnt/CYBRAN/raspi1/usr/include/libavcodec -isystem/mnt/CYBRAN/raspi1/opt/vc/include/interface/vmcs_host/linux -isystem/mnt/CYBRAN/raspi1/usr/include/dbus-1.0 -isystem/mnt/CYBRAN/raspi1/usr/lib/arm-linux-gnueabihf/dbus-1.0/include/ -isystem/mnt/CYBRAN/raspi1/usr/include" \
 	LDFLAGS="" \
   ./configure \
 			--extra-cflags="-mfpu=vfp -mfloat-abi=hard -mno-apcs-stack-check -mstructure-size-boundary=32 -mno-sched-prolog" \
@@ -268,7 +268,7 @@ libzvbi enabled           no
 texi2html enabled         no
 perl enabled              yes
 pod2man enabled           yes
-makeinfo enabled          no
+makeinfo enabled          yes
 
 External libraries:
 iconv
@@ -455,11 +455,13 @@ Enabled outdevs:
 
 License: GPL version 2 or later
 Creating config.mak, config.h, and doc/config.texi...
+
+WARNING: arm-linux-gnueabihf-pkg-config not found, library detection may fail.
 cd ffmpeg; \
 	make -j9
-make[2]: Entering directory `/home/peyman/Documents/omxplayer/omxplayer-sync-2-master/ffmpeg'
-make[2]: Leaving directory `/home/peyman/Documents/omxplayer/omxplayer-sync-2-master/ffmpeg'
-make[2]: Entering directory `/home/peyman/Documents/omxplayer/omxplayer-sync-2-master/ffmpeg'
+make[2]: Entering directory `/home/peyman/Documents/omxplayer/omxplayer-sync3/ffmpeg'
+make[2]: Leaving directory `/home/peyman/Documents/omxplayer/omxplayer-sync3/ffmpeg'
+make[2]: Entering directory `/home/peyman/Documents/omxplayer/omxplayer-sync3/ffmpeg'
 CC	libavdevice/alldevices.o
 CC	libavdevice/avdevice.o
 CC	libavformat/4xm.o
@@ -467,15 +469,15 @@ CC	libavformat/aacdec.o
 CC	libavformat/ac3dec.o
 CC	libavformat/act.o
 CC	libavformat/adp.o
-CC	libavformat/aea.o
 CC	libavformat/adxdec.o
-CC	libavformat/afc.o
+CC	libavformat/aea.o
 CC	libavformat/aiffdec.o
+CC	libavformat/afc.o
 CC	libavformat/allformats.o
-CC	libavformat/amr.o
 CC	libavformat/anm.o
-CC	libavformat/ape.o
+CC	libavformat/amr.o
 CC	libavformat/apc.o
+CC	libavformat/ape.o
 CC	libavformat/apetag.o
 CC	libavformat/aqtitledec.o
 CC	libavformat/asf.o
@@ -513,13 +515,13 @@ CC	libavformat/cutils.o
 CC	libavformat/data_uri.o
 CC	libavformat/daud.o
 CC	libavformat/dfa.o
+CC	libavformat/diracdec.o
 libavformat/daud.c:53:12: warning: ‘daud_write_header’ defined but not used [-Wunused-function]
  static int daud_write_header(struct AVFormatContext *s)
             ^
 libavformat/daud.c:61:12: warning: ‘daud_write_packet’ defined but not used [-Wunused-function]
  static int daud_write_packet(struct AVFormatContext *s, AVPacket *pkt)
             ^
-CC	libavformat/diracdec.o
 CC	libavformat/dnxhddec.o
 CC	libavformat/dsicin.o
 CC	libavformat/dtsdec.o
@@ -541,13 +543,13 @@ CC	libavformat/format.o
 CC	libavformat/frmdec.o
 CC	libavformat/ftp.o
 CC	libavformat/g722.o
-libavformat/flvdec.c:693:12: warning: ‘flv_data_packet’ defined but not used [-Wunused-function]
- static int flv_data_packet(AVFormatContext *s, AVPacket *pkt,
-            ^
 CC	libavformat/g723_1.o
 CC	libavformat/g729dec.o
 CC	libavformat/gifdec.o
 CC	libavformat/gopher.o
+libavformat/flvdec.c:693:12: warning: ‘flv_data_packet’ defined but not used [-Wunused-function]
+ static int flv_data_packet(AVFormatContext *s, AVPacket *pkt,
+            ^
 CC	libavformat/gsmdec.o
 CC	libavformat/gxf.o
 CC	libavformat/h261dec.o
@@ -565,6 +567,7 @@ CC	libavformat/idcin.o
 CC	libavformat/idroqdec.o
 CC	libavformat/iff.o
 CC	libavformat/ilbc.o
+CC	libavformat/img2.o
 libavformat/id3v2.c: In function ‘id3v2_parse’:
 libavformat/id3v2.c:667:23: warning: variable ‘dlen’ set but not used [-Wunused-but-set-variable]
          unsigned long dlen;
@@ -572,7 +575,6 @@ libavformat/id3v2.c:667:23: warning: variable ‘dlen’ set but not used [-Wunu
 libavformat/id3v2.c:617:9: warning: unused variable ‘uncompressed_buffer_size’ [-Wunused-variable]
      int uncompressed_buffer_size = 0;
          ^
-CC	libavformat/img2.o
 CC	libavformat/img2dec.o
 CC	libavformat/ingenientdec.o
 CC	libavformat/ipmovie.o
@@ -589,8 +591,8 @@ CC	libavformat/loasdec.o
 CC	libavformat/log2_tab.o
 CC	libavformat/lvfdec.o
 CC	libavformat/lxfdec.o
-CC	libavformat/m4vdec.o
 CC	libavformat/matroska.o
+CC	libavformat/m4vdec.o
 CC	libavformat/matroskadec.o
 CC	libavformat/md5proto.o
 CC	libavformat/metadata.o
@@ -657,6 +659,7 @@ CC	libavformat/realtextdec.o
 CC	libavformat/redspark.o
 CC	libavformat/riff.o
 CC	libavformat/riffdec.o
+CC	libavformat/rl2.o
 libavformat/rdt.c: In function ‘rdt_parse_packet’:
 libavformat/rdt.c:304:9: warning: passing argument 2 of ‘ffio_init_context’ discards ‘const’ qualifier from pointer target type [enabled by default]
          ffio_init_context(&pb, buf, len, 0, NULL, NULL, NULL, NULL);
@@ -665,14 +668,13 @@ In file included from libavformat/rdt.c:36:0:
 libavformat/avio_internal.h:30:5: note: expected ‘unsigned char *’ but argument is of type ‘const uint8_t *’
  int ffio_init_context(AVIOContext *s,
      ^
-CC	libavformat/rl2.o
 CC	libavformat/rm.o
 CC	libavformat/rmdec.o
 CC	libavformat/rmsipr.o
 CC	libavformat/rpl.o
 CC	libavformat/rsd.o
-CC	libavformat/rso.o
 CC	libavformat/rsodec.o
+CC	libavformat/rso.o
 CC	libavformat/rtmphttp.o
 CC	libavformat/rtmppkt.o
 CC	libavformat/rtmpproto.o
@@ -718,18 +720,18 @@ CC	libavformat/rtspdec.o
 CC	libavformat/samidec.o
 CC	libavformat/sapdec.o
 CC	libavformat/sauce.o
-CC	libavformat/sdp.o
 CC	libavformat/sbgdec.o
+CC	libavformat/sdp.o
 CC	libavformat/seek.o
 CC	libavformat/segafilm.o
 CC	libavformat/sierravmd.o
 CC	libavformat/siff.o
 CC	libavformat/smacker.o
+CC	libavformat/smjpeg.o
 libavformat/sbgdec.c: In function ‘parse_time_sequence’:
 libavformat/sbgdec.c:538:33: warning: ‘rel_ts’ may be used uninitialized in this function [-Wmaybe-uninitialized]
      ts.t    = p->current_time.t + rel_ts;
                                  ^
-CC	libavformat/smjpeg.o
 CC	libavformat/smjpegdec.o
 CC	libavformat/smush.o
 CC	libavformat/sol.o
@@ -761,6 +763,7 @@ CC	libavformat/utils.o
 CC	libavformat/vc1test.o
 CC	libavformat/vivo.o
 CC	libavformat/voc.o
+CC	libavformat/vocdec.o
 libavformat/utils.c: In function ‘find_decoder’:
 libavformat/utils.c:108:9: warning: return discards ‘const’ qualifier from pointer target type [enabled by default]
          return st->codec->codec;
@@ -769,7 +772,6 @@ libavformat/utils.c: In function ‘av_probe_input_format3’:
 libavformat/utils.c:232:17: warning: assignment discards ‘const’ qualifier from pointer target type [enabled by default]
          lpd.buf = zerobuffer;
                  ^
-CC	libavformat/vocdec.o
 CC	libavformat/vorbiscomment.o
 CC	libavformat/vplayerdec.o
 CC	libavformat/vqf.o
@@ -785,8 +787,8 @@ CC	libavformat/wv.o
 CC	libavformat/wvdec.o
 CC	libavformat/xa.o
 CC	libavformat/xmv.o
-CC	libavformat/yop.o
 CC	libavformat/xwma.o
+CC	libavformat/yop.o
 CC	libavformat/yuv4mpeg.o
 CC	libavcodec/012v.o
 CC	libavcodec/4xm.o
@@ -794,6 +796,8 @@ CC	libavcodec/8bps.o
 CC	libavcodec/8svx.o
 CC	libavcodec/aac_ac3_parser.o
 CC	libavcodec/aac_adtstoasc_bsf.o
+CC	libavcodec/aac_parser.o
+CC	libavcodec/aacadtsdec.o
 libavcodec/aac_ac3_parser.c: In function ‘ff_aac_ac3_parse’:
 libavcodec/aac_ac3_parser.c:86:9: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
          if(avctx->request_channels > 0 &&
@@ -810,25 +814,13 @@ libavcodec/aac_ac3_parser.c:89:17: warning: ‘request_channels’ is deprecated
 libavcodec/aac_ac3_parser.c:92:13: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
              avctx->channels = avctx->request_channels;
              ^
-CC	libavcodec/aacadtsdec.o
-CC	libavcodec/aac_parser.o
 HOSTCC	libavcodec/cbrt_tablegen.o
 HOSTCC	libavcodec/aacps_tablegen.o
 CC	libavcodec/aacpsdsp.o
 CC	libavcodec/aacsbr.o
 HOSTCC	libavcodec/aac_tablegen.o
 CC	libavcodec/aandcttab.o
-In file included from ./libavutil/libm.h:28:0,
-                 from libavcodec/aacps_tablegen.h:34,
-                 from libavcodec/aacps_tablegen.c:25:
-./config.h:396:0: warning: "CONFIG_HARDCODED_TABLES" redefined [enabled by default]
- #define CONFIG_HARDCODED_TABLES 1
- ^
-libavcodec/aacps_tablegen.c:24:0: note: this is the location of the previous definition
- #define CONFIG_HARDCODED_TABLES 0
- ^
 CC	libavcodec/ac3.o
-CC	libavcodec/ac3_parser.o
 libavcodec/aacsbr.c: In function ‘ff_sbr_apply’:
 libavcodec/aacsbr.c:1704:9: warning: passing argument 4 of ‘sbr->c.sbr_lf_gen’ from incompatible pointer type [enabled by default]
          sbr->c.sbr_lf_gen(ac, sbr, sbr->X_low, sbr->data[ch].W, sbr->data[ch].Ypos);
@@ -868,6 +860,7 @@ libavcodec/aacsbr.c:1728:19: warning: passing argument 4 of ‘sbr->c.sbr_x_gen�
 libavcodec/aacsbr.c:1728:19: note: expected ‘const float (*)[64][2]’ but argument is of type ‘float (*)[64][2]’
 libavcodec/aacsbr.c:1728:19: warning: passing argument 5 of ‘sbr->c.sbr_x_gen’ from incompatible pointer type [enabled by default]
 libavcodec/aacsbr.c:1728:19: note: expected ‘const float (*)[40][2]’ but argument is of type ‘float (*)[40][2]’
+CC	libavcodec/ac3_parser.o
 CC	libavcodec/ac3dec.o
 CC	libavcodec/ac3dec_data.o
 libavcodec/ac3dec.c: In function ‘ac3_decode_init’:
@@ -883,7 +876,6 @@ libavcodec/ac3dec.c:183:13: warning: ‘request_channels’ is deprecated (decla
 libavcodec/ac3dec.c:184:9: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
          avctx->channels = avctx->request_channels;
          ^
-CC	libavcodec/ac3dsp.o
 libavcodec/ac3dec.c: In function ‘ac3_decode_frame’:
 libavcodec/ac3dec.c:1350:9: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
          if (avctx->request_channels > 0 && avctx->request_channels <= 2 &&
@@ -898,6 +890,16 @@ libavcodec/ac3dec.c:1352:13: warning: ‘request_channels’ is deprecated (decl
 libavcodec/ac3dec.c:1353:13: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
              s->output_mode  = avctx->request_channels == 1 ? AC3_CHMODE_MONO : AC3_CHMODE_STEREO;
              ^
+CC	libavcodec/ac3dsp.o
+In file included from ./libavutil/libm.h:28:0,
+                 from libavcodec/aacps_tablegen.h:34,
+                 from libavcodec/aacps_tablegen.c:25:
+./config.h:396:0: warning: "CONFIG_HARDCODED_TABLES" redefined [enabled by default]
+ #define CONFIG_HARDCODED_TABLES 1
+ ^
+libavcodec/aacps_tablegen.c:24:0: note: this is the location of the previous definition
+ #define CONFIG_HARDCODED_TABLES 0
+ ^
 CC	libavcodec/ac3tab.o
 CC	libavcodec/acelp_filters.o
 CC	libavcodec/acelp_pitch_delay.o
@@ -958,8 +960,8 @@ AS	libavcodec/arm/jrevdct_arm.o
 AS	libavcodec/arm/mdct_vfp.o
 AS	libavcodec/arm/mpegaudiodsp_fixed_armv6.o
 CC	libavcodec/arm/mpegaudiodsp_init_arm.o
-CC	libavcodec/arm/sbrdsp_init_arm.o
 CC	libavcodec/arm/mpegvideo_arm.o
+CC	libavcodec/arm/sbrdsp_init_arm.o
 AS	libavcodec/arm/simple_idct_arm.o
 AS	libavcodec/arm/simple_idct_armv6.o
 AS	libavcodec/arm/synth_filter_vfp.o
@@ -968,16 +970,16 @@ CC	libavcodec/arm/vorbisdsp_init_arm.o
 CC	libavcodec/arm/vp3dsp_init_arm.o
 CC	libavcodec/arm/vp6dsp_init_arm.o
 AS	libavcodec/arm/vp8_armv6.o
-AS	libavcodec/arm/vp8dsp_armv6.o
 CC	libavcodec/arm/vp8dsp_init_arm.o
+AS	libavcodec/arm/vp8dsp_armv6.o
 CC	libavcodec/arm/vp8dsp_init_armv6.o
 CC	libavcodec/ass.o
 CC	libavcodec/ass_split.o
-CC	libavcodec/assdec.o
 libavcodec/arm/vp3dsp_init_arm.c: In function ‘ff_vp3dsp_init_arm’:
 libavcodec/arm/vp3dsp_init_arm.c:41:26: warning: assignment from incompatible pointer type [enabled by default]
          c->idct_dc_add   = ff_vp3_idct_dc_add_neon;
                           ^
+CC	libavcodec/assdec.o
 CC	libavcodec/atrac.o
 CC	libavcodec/atrac1.o
 CC	libavcodec/atrac3.o
@@ -1002,10 +1004,10 @@ CC	libavcodec/chomp_bsf.o
 CC	libavcodec/cngdec.o
 CC	libavcodec/codec_desc.o
 CC	libavcodec/cook.o
+CC	libavcodec/cook_parser.o
+HOSTCC	libavcodec/cos_tablegen.o
 CC	libavcodec/dca.o
 CC	libavcodec/dca_parser.o
-HOSTCC	libavcodec/cos_tablegen.o
-CC	libavcodec/cook_parser.o
 CC	libavcodec/dcadec.o
 CC	libavcodec/dcadsp.o
 CC	libavcodec/dct.o
@@ -1015,9 +1017,11 @@ CC	libavcodec/dirac.o
 CC	libavcodec/dirac_parser.o
 CC	libavcodec/dnxhd_parser.o
 libavcodec/dcadec.c: In function ‘dca_filter_channels’:
+CC	libavcodec/dpcm.o
 libavcodec/dcadec.c:1452:5: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
      if (s->avctx->request_channels == 2 && s->prim_channels > 2) {
      ^
+CC	libavcodec/dpx_parser.o
 libavcodec/dcadec.c: In function ‘dca_decode_frame’:
 libavcodec/dcadec.c:2230:9: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
          || (s->core_ext_mask & DCA_EXT_XXCH && avctx->request_channels > 0
@@ -1053,13 +1057,12 @@ libavcodec/dcadec.c:2484:9: warning: ‘request_channels’ is deprecated (decla
 libavcodec/dcadec.c:2485:9: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
          avctx->channels = avctx->request_channels;
          ^
-CC	libavcodec/dpcm.o
-CC	libavcodec/dpx_parser.o
 CC	libavcodec/dsicinav.o
 CC	libavcodec/dsputil.o
 CC	libavcodec/dump_extradata_bsf.o
 CC	libavcodec/dv_profile.o
 CC	libavcodec/dvbsub_parser.o
+CC	libavcodec/dvbsubdec.o
 In file included from libavcodec/dsputil.h:35:0,
                  from libavcodec/dsputil.c:36:
 libavcodec/dsputil_template.c:253:8: warning: ‘avg_pixels16_xy2_8_c’ defined but not used [-Wunused-function]
@@ -1098,7 +1101,6 @@ libavcodec/dsputil_template.c:247:16: note: in expansion of macro ‘FUNCC’
 libavcodec/dsputil_template.c:254:1: note: in expansion of macro ‘PIXOP2’
  PIXOP2(put, op_put)
  ^
-CC	libavcodec/dvbsubdec.o
 CC	libavcodec/dvd_nav_parser.o
 CC	libavcodec/dvdsub_parser.o
 CC	libavcodec/dvdsubdec.o
@@ -1108,6 +1110,9 @@ CC	libavcodec/eacmv.o
 CC	libavcodec/eaidct.o
 CC	libavcodec/eamad.o
 CC	libavcodec/eatgq.o
+CC	libavcodec/eatgv.o
+CC	libavcodec/eatqi.o
+CC	libavcodec/error_resilience.o
 libavcodec/eamad.c: In function ‘decode_frame’:
 libavcodec/eamad.c:94:44: warning: ‘mv_y’ may be used uninitialized in this function [-Wmaybe-uninitialized]
          unsigned offset = (mb_y * 8 + (mv_y/2))*t->last_frame.linesize[index] + mb_x * 8 + (mv_x/2);
@@ -1121,9 +1126,6 @@ libavcodec/eamad.c:94:97: warning: ‘mv_x’ may be used uninitialized in this 
 libavcodec/eamad.c:193:9: note: ‘mv_x’ was declared here
      int mv_x, mv_y;
          ^
-CC	libavcodec/eatgv.o
-CC	libavcodec/eatqi.o
-CC	libavcodec/error_resilience.o
 CC	libavcodec/evrcdec.o
 CC	libavcodec/faanidct.o
 CC	libavcodec/fft_fixed.o
@@ -1153,16 +1155,15 @@ CC	libavcodec/h263_parser.o
 CC	libavcodec/h263dec.o
 CC	libavcodec/h264.o
 CC	libavcodec/h264_cabac.o
-CC	libavcodec/h264_cavlc.o
 libavcodec/h263dec.c: In function ‘ff_h263_decode_frame’:
 libavcodec/h263dec.c:414:1: warning: label ‘retry’ defined but not used [-Wunused-label]
  retry:
  ^
+CC	libavcodec/h264_cavlc.o
 CC	libavcodec/h264_direct.o
 CC	libavcodec/h264_loopfilter.o
 CC	libavcodec/h264_mp4toannexb_bsf.o
 CC	libavcodec/h264_parser.o
-CC	libavcodec/h264_ps.o
 libavcodec/h264_cavlc.c: In function ‘decode_residual’:
 libavcodec/h264_cavlc.c:600:46: warning: array subscript is above array bounds [-Warray-bounds]
              ((type*)block)[*scantable]= level[i]; \
@@ -1176,6 +1177,7 @@ libavcodec/h264_cavlc.c:600:46: warning: array subscript is above array bounds [
 libavcodec/h264_cavlc.c:622:9: note: in expansion of macro ‘STORE_BLOCK’
          STORE_BLOCK(int16_t)
          ^
+CC	libavcodec/h264_ps.o
 CC	libavcodec/h264_refs.o
 CC	libavcodec/h264_sei.o
 CC	libavcodec/h264chroma.o
@@ -1184,31 +1186,17 @@ CC	libavcodec/h264idct.o
 CC	libavcodec/h264pred.o
 CC	libavcodec/h264qpel.o
 CC	libavcodec/hevc.o
+CC	libavcodec/hevc_cabac.o
 libavcodec/hevc.c: In function ‘hls_slice_data_wpp’:
 libavcodec/hevc.c:1944:13: warning: assignment discards ‘const’ qualifier from pointer target type [enabled by default]
      s->data = nal;
              ^
-CC	libavcodec/hevc_cabac.o
 CC	libavcodec/hevc_filter.o
+CC	libavcodec/hevc_mvs.o
 libavcodec/hevc.c: In function ‘hls_prediction_unit’:
 libavcodec/hevc.c:1218:18: warning: ‘ref0’ may be used uninitialized in this function [-Wmaybe-uninitialized]
          chroma_mc(s, tmp, tmp2, tmpstride, ref0->frame,
                   ^
-libavcodec/hevc_filter.c: In function ‘ff_hevc_hls_filter’:
-libavcodec/hevc_filter.c:416:72: warning: ‘left_beta_offset’ may be used uninitialized in this function [-Wmaybe-uninitialized]
-                 beta[0]  = betatable[av_clip(qp0 + ((beta_offset >> 1) << 1), 0, MAX_QP)];
-                                                                        ^
-libavcodec/hevc_filter.c:330:25: note: ‘left_beta_offset’ was declared here
-     int left_tc_offset, left_beta_offset;
-                         ^
-libavcodec/hevc_filter.c:311:105: warning: ‘left_tc_offset’ may be used uninitialized in this function [-Wmaybe-uninitialized]
- #define TC_CALC(qp, bs) tctable[av_clip((qp) + DEFAULT_INTRA_TC_OFFSET * ((bs) - 1) + ((tc_offset >> 1) << 1), 0, MAX_QP + DEFAULT_INTRA_TC_OFFSET)]
-                                                                                                         ^
-libavcodec/hevc_filter.c:330:9: note: ‘left_tc_offset’ was declared here
-     int left_tc_offset, left_beta_offset;
-         ^
-CC	libavcodec/hevc_mvs.o
-CC	libavcodec/hevc_parser.o
 libavcodec/hevc_cabac.c: In function ‘ff_hevc_hls_residual_coding’:
 libavcodec/hevc_cabac.c:1372:37: warning: ‘dc_scale’ may be used uninitialized in this function [-Wmaybe-uninitialized]
                              scale_m = dc_scale;
@@ -1225,16 +1213,30 @@ libavcodec/hevc_cabac.c:1375:96: warning: ‘add’ may be used uninitialized in
 libavcodec/hevc_cabac.c:1375:39: warning: ‘shift’ may be used uninitialized in this function [-Wmaybe-uninitialized]
                      trans_coeff_level = (trans_coeff_level * (int64_t)scale * (int64_t)scale_m + add) >> shift;
                                        ^
+CC	libavcodec/hevc_parser.o
+libavcodec/hevc_filter.c: In function ‘ff_hevc_hls_filter’:
+libavcodec/hevc_filter.c:416:72: warning: ‘left_beta_offset’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+                 beta[0]  = betatable[av_clip(qp0 + ((beta_offset >> 1) << 1), 0, MAX_QP)];
+                                                                        ^
+libavcodec/hevc_filter.c:330:25: note: ‘left_beta_offset’ was declared here
+     int left_tc_offset, left_beta_offset;
+                         ^
+libavcodec/hevc_filter.c:311:105: warning: ‘left_tc_offset’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ #define TC_CALC(qp, bs) tctable[av_clip((qp) + DEFAULT_INTRA_TC_OFFSET * ((bs) - 1) + ((tc_offset >> 1) << 1), 0, MAX_QP + DEFAULT_INTRA_TC_OFFSET)]
+                                                                                                         ^
+libavcodec/hevc_filter.c:330:9: note: ‘left_tc_offset’ was declared here
+     int left_tc_offset, left_beta_offset;
+         ^
 CC	libavcodec/hevc_ps.o
 CC	libavcodec/hevc_refs.o
 CC	libavcodec/hevc_sei.o
 CC	libavcodec/hevcdsp.o
+CC	libavcodec/hevcpred.o
+CC	libavcodec/hpeldsp.o
 libavcodec/hevc_refs.c: In function ‘ff_hevc_output_frame’:
 libavcodec/hevc_refs.c:175:24: warning: ‘min_idx’ may be used uninitialized in this function [-Wmaybe-uninitialized]
              HEVCFrame *frame = &s->DPB[min_idx];
                         ^
-CC	libavcodec/hevcpred.o
-CC	libavcodec/hpeldsp.o
 CC	libavcodec/huffman.o
 CC	libavcodec/iff.o
 libavcodec/iff.c:321:20: warning: ‘decode_init’ defined but not used [-Wunused-function]
@@ -1261,12 +1263,11 @@ libavcodec/hevc_ps.c:755:79: warning: array subscript is above array bounds [-Wa
 CC	libavcodec/imx_dump_header_bsf.o
 CC	libavcodec/interplayvideo.o
 CC	libavcodec/ituh263dec.o
-CC	libavcodec/jacosubdec.o
 libavcodec/ituh263dec.c: In function ‘h263_decode_block’:
 libavcodec/ituh263dec.c:444:15: warning: ‘level’ may be used uninitialized in this function [-Wmaybe-uninitialized]
      int code, level, i, j, last, run;
                ^
-CC	libavcodec/jrevdct.o
+CC	libavcodec/jacosubdec.o
 libavcodec/interplayvideo.c: In function ‘ipvideo_decode_block_opcode_0xD_16’:
 libavcodec/interplayvideo.c:830:26: warning: ‘P[1]’ may be used uninitialized in this function [-Wmaybe-uninitialized]
              pixel_ptr[x] = P[x >> 2];
@@ -1277,6 +1278,7 @@ libavcodec/interplayvideo.c:468:19: warning: ‘P[1]’ may be used uninitialize
      unsigned char P[2];
                    ^
 libavcodec/interplayvideo.c:468:19: warning: ‘P[0]’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+CC	libavcodec/jrevdct.o
 CC	libavcodec/kbdwin.o
 CC	libavcodec/latm_parser.o
 CC	libavcodec/log2_tab.o
@@ -1332,6 +1334,8 @@ CC	libavcodec/nellymoserdec.o
 CC	libavcodec/noise_bsf.o
 CC	libavcodec/options.o
 CC	libavcodec/paf.o
+CC	libavcodec/parser.o
+CC	libavcodec/pcm-bluray.o
 In file included from libavcodec/options.c:35:0:
 libavcodec/options_table.h:347:1: warning: ‘request_channels’ is deprecated (declared at libavcodec/avcodec.h:1926) [-Wdeprecated-declarations]
  {"request_channels", "set desired number of audio channels", OFFSET(request_channels), AV_OPT_TYPE_INT, {.i64 = DEFAULT }, 0, INT_MAX, A|D},
@@ -1340,8 +1344,6 @@ libavcodec/options.c: In function ‘avcodec_get_context_defaults3’:
 libavcodec/options.c:114:5: warning: ‘av_opt_set_defaults2’ is deprecated (declared at ./libavutil/opt.h:399) [-Wdeprecated-declarations]
      av_opt_set_defaults2(s, flags, flags);
      ^
-CC	libavcodec/parser.o
-CC	libavcodec/pcm-bluray.o
 CC	libavcodec/pcm-dvd.o
 HOSTCC	libavcodec/pcm_tablegen.o
 CC	libavcodec/pgssubdec.o
@@ -1353,8 +1355,6 @@ CC	libavcodec/proresdec_lgpl.o
 CC	libavcodec/proresdsp.o
 CC	libavcodec/pthread.o
 CC	libavcodec/qcelpdec.o
-HOSTCC	libavcodec/qdm2_tablegen.o
-CC	libavcodec/ra144.o
 libavcodec/pthread.c: In function ‘frame_worker_thread’:
 libavcodec/pthread.c:340:9: warning: ‘get_buffer’ is deprecated (declared at libavcodec/avcodec.h:2022) [-Wdeprecated-declarations]
          if (!codec->update_thread_context && THREAD_SAFE_CALLBACKS(avctx))
@@ -1370,6 +1370,8 @@ libavcodec/pthread.c:943:9: warning: ‘get_buffer’ is deprecated (declared at
 libavcodec/pthread.c:984:5: warning: ‘get_buffer’ is deprecated (declared at libavcodec/avcodec.h:2022) [-Wdeprecated-declarations]
      if (!THREAD_SAFE_CALLBACKS(avctx) && !avctx->codec->update_thread_context)
      ^
+HOSTCC	libavcodec/qdm2_tablegen.o
+CC	libavcodec/ra144.o
 CC	libavcodec/ra144dec.o
 CC	libavcodec/ra288.o
 CC	libavcodec/ralf.o
@@ -1377,6 +1379,7 @@ CC	libavcodec/raw.o
 CC	libavcodec/rawdec.o
 CC	libavcodec/rdft.o
 CC	libavcodec/realtextdec.o
+CC	libavcodec/remove_extradata_bsf.o
 libavcodec/rdft.c: In function ‘ff_rdft_init’:
 libavcodec/rdft.c:103:18: warning: unused variable ‘theta’ [-Wunused-variable]
      const double theta = (trans == DFT_R2C || trans == DFT_C2R ? -1 : 1)*2*M_PI/n;
@@ -1384,7 +1387,6 @@ libavcodec/rdft.c:103:18: warning: unused variable ‘theta’ [-Wunused-variabl
 libavcodec/rdft.c:102:9: warning: unused variable ‘i’ [-Wunused-variable]
      int i;
          ^
-CC	libavcodec/remove_extradata_bsf.o
 CC	libavcodec/resample.o
 CC	libavcodec/resample2.o
 CC	libavcodec/rv34_parser.o
@@ -1421,8 +1423,8 @@ CC	libavcodec/takdec.o
 CC	libavcodec/targa_y216dec.o
 CC	libavcodec/textdec.o
 CC	libavcodec/timecode.o
-CC	libavcodec/tta.o
 CC	libavcodec/truespeech.o
+CC	libavcodec/tta.o
 CC	libavcodec/ttadata.o
 CC	libavcodec/twinvq.o
 CC	libavcodec/twinvqdec.o
@@ -1472,7 +1474,6 @@ libavcodec/utils.c:2129:9: warning: ‘release_buffer’ is deprecated (declared
          avctx->release_buffer = avcodec_default_release_buffer;
          ^
 libavcodec/utils.c:2129:9: warning: ‘avcodec_default_release_buffer’ is deprecated (declared at libavcodec/utils.c:995) [-Wdeprecated-declarations]
-CC	libavcodec/vc1_parser.o
 In file included from libavcodec/tak.h:33:0,
                  from libavcodec/takdec.c:30:
 libavcodec/takdec.c: In function ‘decorrelate’:
@@ -1482,6 +1483,7 @@ libavcodec/get_bits.h:192:49: warning: ‘code_size’ may be used uninitialized
 libavcodec/takdec.c:590:21: note: ‘code_size’ was declared here
          int tmp, x, code_size;
                      ^
+CC	libavcodec/vc1_parser.o
 libavcodec/takdec.c: In function ‘tak_decode_frame’:
 libavcodec/takdec.c:866:53: warning: ‘hsize’ may be used uninitialized in this function [-Wmaybe-uninitialized]
                               get_bits_count(gb) / 8 - hsize)) {
@@ -1501,7 +1503,6 @@ CC	libavcodec/vp56.o
 CC	libavcodec/vp56data.o
 CC	libavcodec/vp56dsp.o
 CC	libavcodec/vp56rac.o
-CC	libavcodec/vp6.o
 libavcodec/vp56.c: In function ‘ff_vp56_init_context’:
 libavcodec/vp56.c:702:0: warning: "T" redefined [enabled by default]
  #define T(x) (x >> 3) | ((x & 7) << 3)
@@ -1511,6 +1512,7 @@ In file included from libavcodec/vp56.h:245:0,
 libavcodec/arm/vp56_arith.h:29:0: note: this is the location of the previous definition
  #   define T(x)
  ^
+CC	libavcodec/vp6.o
 CC	libavcodec/vp6dsp.o
 CC	libavcodec/vp8.o
 CC	libavcodec/vp8_parser.o
@@ -1529,12 +1531,13 @@ CC	libavcodec/vqavideo.o
 CC	libavcodec/wavpack.o
 CC	libavcodec/webvttdec.o
 CC	libavcodec/wma.o
+CC	libavcodec/wma_common.o
 libavcodec/wma.c: In function ‘ff_wma_init’:
 libavcodec/wma.c:314:23: warning: assignment discards ‘const’ qualifier from pointer target type [enabled by default]
          s->windows[i] = ff_sine_windows[s->frame_len_bits - i];
                        ^
-CC	libavcodec/wma_common.o
 CC	libavcodec/wmadec.o
+CC	libavcodec/wmalosslessdec.o
 libavcodec/wavpack.c: In function ‘wavpack_decode_frame’:
 libavcodec/wavpack.c:1000:19: warning: ‘samples_r’ may be used uninitialized in this function [-Wmaybe-uninitialized]
              memcpy(samples_r, samples_l, bpp * s->samples);
@@ -1542,13 +1545,6 @@ libavcodec/wavpack.c:1000:19: warning: ‘samples_r’ may be used uninitialized
 libavcodec/wavpack.c:610:23: note: ‘samples_r’ was declared here
      void *samples_l, *samples_r;
                        ^
-CC	libavcodec/wmalosslessdec.o
-libavcodec/wmalosslessdec.c: In function ‘decode_frame’:
-libavcodec/wmalosslessdec.c:678:45: warning: array subscript is above array bounds [-Warray-bounds]
-                          s->mclms_coeffs_cur[i + num_channels * ich];
-                                             ^
-CC	libavcodec/wmaprodec.o
-CC	libavcodec/wmavoice.o
 libavcodec/vp9.c: In function ‘intra_recon.isra.4’:
 libavcodec/vp9.c:2081:62: warning: ‘topleft’ may be used uninitialized in this function [-Wmaybe-uninitialized]
              (!edges[mode].needs_topleft || (have_left && top == topleft)) &&
@@ -1574,6 +1570,12 @@ libavcodec/vp9.c:2107:38: warning: ‘top’ may be used uninitialized in this f
 libavcodec/vp9.c:2059:18: note: ‘top’ was declared here
          uint8_t *top, *topleft;
                   ^
+libavcodec/wmalosslessdec.c: In function ‘decode_frame’:
+libavcodec/wmalosslessdec.c:678:45: warning: array subscript is above array bounds [-Warray-bounds]
+                          s->mclms_coeffs_cur[i + num_channels * ich];
+                                             ^
+CC	libavcodec/wmaprodec.o
+CC	libavcodec/wmavoice.o
 libavcodec/wmaprodec.c: In function ‘decode_init’:
 libavcodec/wmaprodec.c:465:48: warning: assignment discards ‘const’ qualifier from pointer target type [enabled by default]
          s->windows[WMAPRO_BLOCK_SIZES - i - 1] = ff_sine_windows[win_idx];
@@ -1687,13 +1689,18 @@ CC	libavutil/mem.o
 CC	libavutil/murmur3.o
 CC	libavutil/opt.o
 CC	libavutil/parseutils.o
-CC	libavutil/pixdesc.o
-CC	libavutil/random_seed.o
-CC	libavutil/rational.o
 libavutil/opt.c: In function ‘av_find_opt’:
 libavutil/opt.c:49:5: warning: ‘av_next_option’ is deprecated (declared at libavutil/opt.h:376) [-Wdeprecated-declarations]
      while ((o = av_next_option(v, o))) {
      ^
+CC	libavutil/pixdesc.o
+libavutil/opt.c: In function ‘av_opt_set_defaults’:
+libavutil/opt.c:1067:5: warning: ‘av_opt_set_defaults2’ is deprecated (declared at libavutil/opt.h:399) [-Wdeprecated-declarations]
+     av_opt_set_defaults2(s, 0, 0);
+     ^
+CC	libavutil/random_seed.o
+CC	libavutil/rational.o
+CC	libavutil/rc4.o
 libavutil/pixdesc.c: In function ‘ff_check_pixfmt_descriptors’:
 libavutil/pixdesc.c:1997:5: warning: ‘av_pix_fmt_descriptors’ is deprecated (declared at libavutil/pixdesc.c:132) [-Wdeprecated-declarations]
      for (i=0; i<FF_ARRAY_ELEMS(av_pix_fmt_descriptors); i++) {
@@ -1702,11 +1709,6 @@ libavutil/pixdesc.c:1997:5: warning: ‘av_pix_fmt_descriptors’ is deprecated 
 libavutil/pixdesc.c:1998:9: warning: ‘av_pix_fmt_descriptors’ is deprecated (declared at libavutil/pixdesc.c:132) [-Wdeprecated-declarations]
          const AVPixFmtDescriptor *d = &av_pix_fmt_descriptors[i];
          ^
-libavutil/opt.c: In function ‘av_opt_set_defaults’:
-libavutil/opt.c:1067:5: warning: ‘av_opt_set_defaults2’ is deprecated (declared at libavutil/opt.h:399) [-Wdeprecated-declarations]
-     av_opt_set_defaults2(s, 0, 0);
-     ^
-CC	libavutil/rc4.o
 CC	libavutil/ripemd.o
 CC	libavutil/samplefmt.o
 CC	libavutil/sha.o
@@ -1714,6 +1716,10 @@ CC	libavutil/sha512.o
 CC	libavutil/time.o
 CC	libavutil/timecode.o
 CC	libavutil/tree.o
+libavcodec/vp9.c: In function ‘decode_sb’:
+libavcodec/vp9.c:2791:5: warning: ‘res’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+     return res;
+     ^
 CC	libavutil/utils.o
 CC	libavutil/xga_font_data.o
 CC	libavutil/xtea.o
@@ -1765,11 +1771,11 @@ libavfilter/avcodec.c: In function ‘avfilter_fill_frame_from_buffer_ref’:
 libavfilter/avcodec.c:155:5: warning: ‘avfilter_copy_buf_props’ is deprecated (declared at libavfilter/avcodec.c:86) [-Wdeprecated-declarations]
      return avfilter_copy_buf_props(frame, ref);
      ^
-libavcodec/vp9.c: In function ‘decode_sb’:
-libavcodec/vp9.c:2791:5: warning: ‘res’ may be used uninitialized in this function [-Wmaybe-uninitialized]
-     return res;
-     ^
 CC	libavfilter/buffer.o
+libavcodec/vp9.c: In function ‘vp9_decode_frame’:
+libavcodec/vp9.c:3389:24: warning: ‘res’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+                     if ((res = decode_sb(ctx, row, col, lflvl_ptr,
+                        ^
 CC	libavfilter/buffersink.o
 CC	libavfilter/buffersrc.o
 libavfilter/buffer.c: In function ‘avfilter_unref_bufferp’:
@@ -1779,6 +1785,8 @@ libavfilter/buffer.c:116:5: warning: ‘avfilter_unref_buffer’ is deprecated (
 CC	libavfilter/drawutils.o
 CC	libavfilter/fifo.o
 CC	libavfilter/formats.o
+CC	libavfilter/graphdump.o
+CC	libavfilter/graphparser.o
 libavfilter/avfiltergraph.c: In function ‘avfilter_graph_config’:
 libavfilter/avfiltergraph.c:808:48: warning: ‘best_idx’ may be used uninitialized in this function [-Wmaybe-uninitialized]
                 outlink->in_samplerates->formats[best_idx]);
@@ -1786,12 +1794,6 @@ libavfilter/avfiltergraph.c:808:48: warning: ‘best_idx’ may be used uninitia
 libavfilter/avfiltergraph.c:793:13: note: ‘best_idx’ was declared here
          int best_idx, best_diff = INT_MAX;
              ^
-CC	libavfilter/graphdump.o
-CC	libavfilter/graphparser.o
-libavcodec/vp9.c: In function ‘vp9_decode_frame’:
-libavcodec/vp9.c:3389:24: warning: ‘res’ may be used uninitialized in this function [-Wmaybe-uninitialized]
-                     if ((res = decode_sb(ctx, row, col, lflvl_ptr,
-                        ^
 CC	libavfilter/lavfutils.o
 CC	libavfilter/lswsutils.o
 CC	libavfilter/opencl_allkernels.o
@@ -1853,13 +1855,13 @@ CC	libavcodec/cos_tables.o
 CC	libavcodec/mpegaudiodec.o
 CC	libavcodec/mpegaudiodec_float.o
 CC	libavcodec/pcm.o
+CC	libavcodec/qdm2.o
 libavcodec/pcm.c:34:20: warning: ‘pcm_encode_init’ defined but not used [-Wunused-function]
  static av_cold int pcm_encode_init(AVCodecContext *avctx)
                     ^
 libavcodec/pcm.c:83:12: warning: ‘pcm_encode_frame’ defined but not used [-Wunused-function]
  static int pcm_encode_frame(AVCodecContext *avctx, AVPacket *avpkt,
             ^
-CC	libavcodec/qdm2.o
 CC	libavcodec/sinewin.o
 LD	libavfilter/libavfilter.so.3
 LD	libswresample/libswresample.so.0
@@ -1867,25 +1869,27 @@ LD	libavcodec/libavcodec.so.55
 LD	libavformat/libavformat.so.55
 LD	libavdevice/libavdevice.so.55
 LD	libswscale/libswscale.so.2
-make[2]: Leaving directory `/home/peyman/Documents/omxplayer/omxplayer-sync-2-master/ffmpeg'
-make[1]: Leaving directory `/home/peyman/Documents/omxplayer/omxplayer-sync-2-master'
+make[2]: Leaving directory `/home/peyman/Documents/omxplayer/omxplayer-sync3/ffmpeg'
+make[1]: Leaving directory `/home/peyman/Documents/omxplayer/omxplayer-sync3'
 make -f Makefile.ffmpeg install
-make[1]: Entering directory `/home/peyman/Documents/omxplayer/omxplayer-sync-2-master'
-cd ffmpeg; make -j9 DESTDIR="/home/peyman/Documents/omxplayer/omxplayer-sync-2-master/ffmpeg_compiled" install
-make[2]: Entering directory `/home/peyman/Documents/omxplayer/omxplayer-sync-2-master/ffmpeg'
+make[1]: Entering directory `/home/peyman/Documents/omxplayer/omxplayer-sync3'
+cd ffmpeg; make -j9 DESTDIR="/home/peyman/Documents/omxplayer/omxplayer-sync3/ffmpeg_compiled" install
+make[2]: Entering directory `/home/peyman/Documents/omxplayer/omxplayer-sync3/ffmpeg'
 INSTALL	libavdevice/libavdevice.so
 INSTALL	libavfilter/libavfilter.so
 INSTALL	libavformat/libavformat.so
 INSTALL	libavcodec/libavcodec.so
-STRIP	install-libavdevice-shared
 INSTALL	libswresample/libswresample.so
-STRIP	install-libavfilter-shared
 INSTALL	libswscale/libswscale.so
-STRIP	install-libswresample-shared
-STRIP	install-libswscale-shared
-STRIP	install-libavformat-shared
 INSTALL	libavutil/libavutil.so
+INSTALL	libavdevice/avdevice.h
+INSTALL	libavdevice/version.h
 INSTALL	libavdevice/libavdevice.pc
+STRIP	install-libavdevice-shared
+STRIP	install-libavfilter-shared
+STRIP	install-libswscale-shared
+STRIP	install-libswresample-shared
+STRIP	install-libavutil-shared
 INSTALL	libavfilter/asrc_abuffer.h
 INSTALL	libavfilter/avcodec.h
 INSTALL	libavfilter/avfilter.h
@@ -1893,10 +1897,8 @@ INSTALL	libavfilter/avfiltergraph.h
 INSTALL	libavfilter/buffersink.h
 INSTALL	libavfilter/buffersrc.h
 INSTALL	libavfilter/version.h
-INSTALL	libavdevice/avdevice.h
-INSTALL	libavdevice/version.h
 INSTALL	libavfilter/libavfilter.pc
-STRIP	install-libavutil-shared
+STRIP	install-libavformat-shared
 INSTALL	libavformat/avformat.h
 INSTALL	libavformat/avio.h
 INSTALL	libavformat/version.h
@@ -1910,12 +1912,12 @@ INSTALL	libavcodec/vda.h
 INSTALL	libavcodec/vdpau.h
 INSTALL	libavcodec/version.h
 INSTALL	libavcodec/xvmc.h
+INSTALL	libavcodec/libavcodec.pc
 INSTALL	libswresample/swresample.h
 INSTALL	libswresample/version.h
+INSTALL	libswresample/libswresample.pc
 INSTALL	libswscale/swscale.h
 INSTALL	libswscale/version.h
-INSTALL	libavcodec/libavcodec.pc
-INSTALL	libswresample/libswresample.pc
 INSTALL	libswscale/libswscale.pc
 INSTALL	libavutil/adler32.h
 INSTALL	libavutil/aes.h
@@ -1971,6 +1973,6 @@ INSTALL	libavutil/lzo.h
 INSTALL	libavutil/avconfig.h
 INSTALL	libavutil/libavutil.pc
 STRIP	install-libavcodec-shared
-make[2]: Leaving directory `/home/peyman/Documents/omxplayer/omxplayer-sync-2-master/ffmpeg'
+make[2]: Leaving directory `/home/peyman/Documents/omxplayer/omxplayer-sync3/ffmpeg'
 arm-linux-gnueabihf-strip ffmpeg_compiled/usr/local/lib/*.so
-make[1]: Leaving directory `/home/peyman/Documents/omxplayer/omxplayer-sync-2-master'
+make[1]: Leaving directory `/home/peyman/Documents/omxplayer/omxplayer-sync3'

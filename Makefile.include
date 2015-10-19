@@ -21,7 +21,7 @@ SYSROOT :=$(BUILDROOT)
 #SYSROOT :=/mnt/UEF/tools/arm-bcm2708/arm-bcm2708hardfp-linux-gnueabi/arm-bcm2708hardfp-linux-gnueabi/sysroot
 #endif
 JOBS=8
-CFLAGS := -isystem$(PREFIX)/include #-marm #-mcpu=cortex-a7
+CFLAGS := -isystem$(PREFIX)/include -M #-marm #-mcpu=cortex-a7
 CXXFLAGS := $(CFLAGS)
 CPPFLAGS := $(CFLAGS)
 LDFLAGS := -L$(BUILDROOT)/lib
@@ -43,4 +43,4 @@ CXXCP := $(CXX) -E
 PATH := $(PREFIX)/bin:$(BUILDROOT)/output/host/usr/bin:$(PATH)
 CFLAGS += -pipe -mfloat-abi=$(FLOAT) -mcpu=cortex-a7 -fomit-frame-pointer -mabi=aapcs-linux -mtune=arm1176jzf-s -mfpu=vfp -Wno-psabi -mno-apcs-stack-check -O3 -mstructure-size-boundary=32 -mno-sched-prolog
 LDFLAGS += -L$(SDKSTAGE)/lib -L$(SDKSTAGE)/usr/lib -L$(SDKSTAGE)/opt/vc/lib #-L$(SDKSTAGE)/usr/lib/omxplayer -L$(SDKSTAGE)/opt/vc/lib -L$(SDKSTAGE)/usr/lib/arm-linux-gnueabihf
-INCLUDES += -isystem$(SDKSTAGE)/usr/include -isystem$(SDKSTAGE)/usr/include/arm-linux-gnueabihf -isystem$(SDKSTAGE)/opt/vc/include -isystem$(SYSROOT)/usr/include -isystem$(SDKSTAGE)/opt/vc/include/interface/vcos/pthreads -isystem$(SDKSTAGE)/usr/include/freetype2 -isystem$(SDKSTAGE)/usr/include/libavcodec -isystem$(SDKSTAGE)/opt/vc/include/interface/vmcs_host/linux -isystem$(SDKSTAGE)/usr/include/dbus-1.0 -isystem$(SDKSTAGE)/usr/lib/arm-linux-gnueabihf/dbus-1.0/include/
+INCLUDES += -isystem$(SDKSTAGE)/usr/include/arm-linux-gnueabihf -isystem$(SDKSTAGE)/opt/vc/include -isystem$(SYSROOT)/usr/include/c++/4.6.3 -isystem$(SYSROOT)/usr/include/c++/4.6/arm-linux-gnueabihf -isystem$(SDKSTAGE)/opt/vc/include/interface/vcos/pthreads -isystem$(SDKSTAGE)/usr/include/freetype2 -isystem$(SDKSTAGE)/usr/include/libavcodec -isystem$(SDKSTAGE)/opt/vc/include/interface/vmcs_host/linux -isystem$(SDKSTAGE)/usr/include/dbus-1.0 -isystem$(SDKSTAGE)/usr/lib/arm-linux-gnueabihf/dbus-1.0/include/ -isystem$(SDKSTAGE)/usr/include
